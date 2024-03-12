@@ -1,28 +1,61 @@
-## Getting Started
+#🚀 Kodify-API
 
-First, run the development server:
+### `Decription`
+The project focuses on the remodeling and creation of a blog for Kodify's website. The main objective is to achieve a modern and visually appealing aesthetic aligned with the latest trends in user interface (UI) design. Additionally, there is a significant emphasis on enhancing the user experience to ensure more intuitive and accessible navigation.s
 
-```bash
-yarn dev
+### `Objective`
+
+Redesign and creation of the Kodify blog to improve the interface and user experience.
+
+### `Requirements`
+
+**Supported operating systems**:
+
+- Ubuntu LTS/Debian 9.x
+- CentOS/RHEL 8
+- macOS Mojave
+- Windows 10
+- Docker
+
+
+**Project Stability and Versioning:**
+
+To maintain project stability, it's crucial to adhere to recommended versions of Strapi and Node.js. The project currently utilizes:
+
+| Next-js Version |  Node.js Version  |
+| --------------- | ----------------- |
+|     14.1.1      |     20.11.24      |
+
+Please ensure that your development environment matches these versions for optimal performance and compatibility.
+
+### `develop`
+
+Download and Run the Project Locally
+
+```
+git clone https://github.com/KodifyDevs/newwebsite.ui.git
+
+cd newwbsite.ui
+
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### `start`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-To create [API routes](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) add an `api/` directory to the `app/` directory with a `route.ts` file. For individual endpoints, create a subfolder in the `api` directory, like `api/hello/route.ts` would map to [http://localhost:3000/api/hello](http://localhost:3000/api/hello).
+```
+npm run start
+# or
+yarn start
+```
 
-## Learn More
+### `build`
 
-To learn more about Next.js, take a look at the following resources:
+Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run build
+# or
+yarn build
+```
