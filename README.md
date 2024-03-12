@@ -48,12 +48,3 @@ yarn dev
 # or
 pnpm dev
 ```
-
-### `Getting with turborepo`
-```bash
-turbo build
-# Run the build and lint tasks with turbo
-turbo type-check build
-# or
-turbo dev
-```
