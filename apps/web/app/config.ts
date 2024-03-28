@@ -1,4 +1,3 @@
 export const {
-    API_URL,
-    API_GRAPHGRAPH_QL
+    POSTS_GRAPHQL_ENDPOINT_URL
 } = process.env
