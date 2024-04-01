@@ -4,7 +4,6 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "env": ["GRAPH_QL_URL"],
       "outputs": [
         ".next/**",
         "!.next/cache/**"

@@ -8,12 +8,12 @@ import {
   NextSSRApolloClient,
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
-import { GRAPH_QL_URL } from "../app/config";
+import { GRAPHQL_URL } from "../app/config";
 
 // have a function to create a client for you
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: GRAPH_QL_URL,
+    uri: GRAPHQL_URL,
     fetchOptions: { cache: "no-store" },
   });
 
