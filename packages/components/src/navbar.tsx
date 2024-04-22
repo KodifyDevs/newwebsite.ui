@@ -129,14 +129,14 @@ export const Navbar: React.FC = () => {
         {/* Mobile Navigation item */}
         <div className={`${nav
           ? 'ui-fixed ui-flex ui-flex-col ui-items-center ui-left-0 xl:ui-hidden 2xl:ui-hidden ui-top-16 ui-w-[100%] -ui-z-10 ui-h-[300px] ui-bg-white ui-bg-[#8B8C891A] ui-ease-in-out ui-duration-1000'
-          : 'ui-ease-in-out ui-flex ui-flex-col ui-items-center ui-h-[300px] ui-left-0 ui-w-[100%] ui-duration-1000 ui-fixed ui-top-[-100%] -ui-z-10'
+          : 'ui-ease-in-out ui-flex ui-flex-col ui-items-center ui-h-[300px] ui-left-0 ui-w-[100%] ui-duration-500 ui-fixed ui-top-[-100%] -ui-z-10'
           } 
         ${isSecondOpen ? 'ui-h-[410px]' : ''} 
         `}>
           <ul
             className={`${nav
-              ? 'ui-fixed ui-px-[116px] ui-py-4 ui-flex ui-rounded-xl ui-flex-col ui-items-center  xl:ui-hidden 2xl:ui-hidden `ui-top-16 ui-w-10/12 ui-left-auto ui-right-auto -ui-z-10 ui-h-[280px] ui-bg-[#8B8C891A] ui-ease-in-out ui-duration-1000'
-              : 'ui-ease-in-out ui-flex-px-[116px] ui-py-4 ui-flex-col ui-items-center ui-h-[280px]  ui-w-10/12 ui-duration-1000 ui-fixed ui-top-[-100%]  ui-left-auto ui-right-auto -ui-z-10'
+              ? 'ui-fixed ui-px-[116px] ui-py-4 ui-flex ui-rounded-xl ui-flex-col ui-items-center  xl:ui-hidden 2xl:ui-hidden `ui-top-16 ui-w-10/12 ui-left-auto ui-right-auto -ui-z-10 ui-h-[280px] ui-bg-[#8B8C891A] ui-ease-in-out ui-duration-500'
+              : 'ui-ease-in-out ui-flex-px-[116px] ui-py-4 ui-flex-col ui-items-center ui-h-[280px]  ui-w-10/12 ui-duration-500 ui-fixed ui-top-[-100%]  ui-left-auto ui-right-auto -ui-z-10'
               }
           ${isSecondOpen ? 'ui-h-auto' : ''} 
           `}
@@ -158,7 +158,7 @@ export const Navbar: React.FC = () => {
 
             <div className={`
           ${isSecondOpen
-                ? 'ui-flex ui-flex-col ui-bg-[#09192826] ui-rounded-xl ui-ease-in-out ui-duration-[2000ms] '
+                ? 'ui-flex ui-flex-col ui-bg-[#09192826] ui-rounded-xl ui-ease-in-out ui-duration-500 '
                 : ''}
           `}>
 

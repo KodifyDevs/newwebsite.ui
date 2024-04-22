@@ -18,9 +18,6 @@ html{
     font-family: 'Barlow', sans-serif       ;
 }
 
-body{
-    background-color: aqua;
-}
 
 .icon {
     transition: opacity 0.3s ease-in-out;
@@ -34,7 +31,7 @@ body{
 
 /* Transicion de despligue de menu idiom */
 .menu {
-    transition: max-height 2s ease-in-out, opacity 100ms ease-out;
+    transition: max-height 1s ease-in-out, opacity 100ms ease-out;
     overflow: hidden;
     max-height: 0;
     opacity: 0;
