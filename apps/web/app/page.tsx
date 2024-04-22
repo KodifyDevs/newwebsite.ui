@@ -1,9 +1,11 @@
-
+import { Navbar } from '@packages/components/navbar';
 
 export default async function Page() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-600">
-      Hello world!
-    </h1>
+    <>
+      <main className="max-w-screen-2xl max-w- flex flex-wrap items-center justify-between">
+      <Navbar />
+      </main>
+    </>
   );
 }

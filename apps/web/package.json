@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@apollo/client": "^3.9.9",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",
     "@packages/eslint-config": "workspace:*",
+    "@packages/tailwind-config": "workspace:*",
     "@packages/typescript-config": "workspace:*",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
