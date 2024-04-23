@@ -13,6 +13,7 @@ export const Navbar: React.FC = () => {
     e.preventDefault();
     setActiveLink(e.currentTarget.getAttribute('data-name'));
   };
+  
   const handleNav = () => {
     setNav(!nav);
   };
