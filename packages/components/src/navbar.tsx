@@ -1,12 +1,8 @@
 "use client";
 import React, { useCallback, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
+import { navItems } from '../constants/constants';
 
-
-interface NavItem {
-  id: number;
-  text: string;
-}
 export const Navbar: React.FC = () => {
   const [nav, setNav] = React.useState<boolean>(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
@@ -50,13 +46,6 @@ export const Navbar: React.FC = () => {
     ));
   };
 
-  const navItems: NavItem[] = [
-    { id: 1, text: 'Inicio' },
-    { id: 2, text: 'Nosotros' },
-    { id: 3, text: 'Servicios' },
-    { id: 4, text: 'Proyectos' },
-    { id: 5, text: 'Blog' }
-  ];
 
 
   return (
