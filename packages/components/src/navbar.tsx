@@ -1,7 +1,6 @@
 "use client";
 import React, { useCallback, useState } from 'react';
-import { BsCheckCircleFill, BsFillCaretDownFill, BsList, BsXLg } from 'react-icons/bs';
-import { LuGlobe } from 'react-icons/lu';
+import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
 
 
 interface NavItem {
@@ -94,13 +93,13 @@ export const Navbar: React.FC = () => {
           <div className="ui-flex ui-leading-5 ui-items-center ui-ml-4 ui-gap-x-[5px] md:ui-py-0 ui-text-richBlack md:p-0 md:ui-w-auto " onClick={toggleSecondMenu}>
             {isSecondOpen ? (
               <>
-                <LuGlobe />
+                <BsGlobeAmericas />
                 <span>ES</span>
                 <span className="md:ui-inline"><BsFillCaretDownFill /></span>
               </>
             ) : (
               <span className={`ui-text-[#091928CC] ui-flex ui-px-3 ui-content-center ui-font-barlow`}>
-                <LuGlobe /> ES
+                <BsGlobeAmericas /> ES
               </span>
             )}
           </div>
@@ -163,7 +162,7 @@ export const Navbar: React.FC = () => {
           `}>
 
               <div className="ui-flex ui-pt-4 ui-items-center ui-pl-[69px] ui-gap-x-[20px] md:ui-py-0 ui-px-3 ui-text-richBlack md:p-0 md:ui-w-auto " onClick={toggleSecondMenu}>
-                <span className="ui-hidden "><LuGlobe /></span>
+                <span className="ui-hidden "><BsGlobeAmericas /></span>
                 {isSecondOpen ? (<>{'Idioma'} <span className=" md:ui-inline"><BsFillCaretDownFill /></span></>) : <span className={`ui-text-[#091928CC] ui-block ui-px-3 ui-content-center ui-font-barlow`}>Idioma</span>}
               </div>
 
