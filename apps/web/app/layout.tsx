@@ -1,3 +1,4 @@
+import { Navbar } from "@packages/components/navbar";
 import { ApolloWrapper } from "../lib/ApolloWrapper";
 import "./globals.css";
 import "@packages/components/styles.css"
@@ -11,6 +12,7 @@ export default function RootLayout({
       <body>
         <ApolloWrapper>
           {children}
+           <Navbar />  
         </ApolloWrapper>
       </body>
     </html>
