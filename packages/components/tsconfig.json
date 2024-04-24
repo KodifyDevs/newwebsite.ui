@@ -1,5 +1,5 @@
 {
   "extends": "@packages/typescript-config/react-library.json",
-  "include": ["."],
+  "include": [".", "../interfaces"],
   "exclude": ["dist", "build", "node_modules"]
 }
