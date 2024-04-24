@@ -1,3 +1,4 @@
+import { Navbar } from "@packages/components/navbar";
 import { ApolloWrapper } from "../lib/ApolloWrapper";
 import "@packages/tailwind-config/globals.css"
 import "./globals.css";
@@ -11,6 +12,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ApolloWrapper>
+           <Navbar />  
           {children}
         </ApolloWrapper>
       </body>
