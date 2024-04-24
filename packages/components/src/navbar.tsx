@@ -2,6 +2,7 @@
 import React, { useCallback, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
 import { navItems } from '../constants/constants';
+import "@packages/tailwind-config/globals.css"
 
 export const Navbar: React.FC = () => {
   const [nav, setNav] = React.useState<boolean>(false);
