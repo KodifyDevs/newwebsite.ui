@@ -1,19 +1,46 @@
 "use client";
-import React, { useCallback, useState } from 'react';
+// eslint-disable-next-line no-redeclare
+import React, { useCallback, useEffect, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
-import { navItems } from '../constants/constants';
+import { navItems } from '../../constants/constants';
 
 export const Navbar: React.FC = () => {
+  const [bgColor, setBgColor] = useState('');
+  const [globeColor, setglobeColor] = useState('white');
+  const [colorText, setColorText] = useState('ui-text-white')
   const [nav, setNav] = React.useState<boolean>(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('');
   const [activeLink, setActiveLink] = useState('');
 
-  const handleClick = (e) => {
+  useEffect(() => {
+    const timerFondo = setTimeout(() => {
+      setBgColor('ui-bg-white');
+    }, 3000);
+
+    const timerglobe = setTimeout(() => {
+      setglobeColor('');
+    }, 3000);
+
+    const timerTexto = setTimeout(() => {
+      setColorText('ui-text-customGray');
+    }, 3000);
+
+    return () => {
+      clearTimeout(timerFondo);
+      clearTimeout(timerglobe);
+      clearTimeout(timerTexto);
+    };
+  }, []);
+
+
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    setActiveLink(e.currentTarget.getAttribute('data-name'));
+    setActiveLink(e.currentTarget.getAttribute('data-name') || '');
   };
   
+
   const handleNav = () => {
     setNav(!nav);
   };
@@ -36,7 +63,7 @@ export const Navbar: React.FC = () => {
       <li key={language} style={{ gap: `${gap}px` }} className="ui-grid ui-pt-4 ui-grid-cols-2 ui-items-center">
         <button
           onClick={() => handleLanguageClick(language)}
-          className="ui-justify-self-center ui-py-2 md:ui-py-0 ui-px-3 ui-text-richBlack md:hover:ui-text-richBlack ui-w-[64px] md:hover:ui-border-b-4 md:hover:ui-border-richBlack md:hover:ui-rounded-none md:hover:ui-bg-transparent md:ui-h-auto  md:p-0"
+          className="ui-justify-self-center ui-py-2 md:ui-py-0 ui-px-3 ui-text-richBlack md:hover:ui-text-richBlack ui-w-[64px] md:hover:ui-border-b-4 md:hover:ui-border-richBlack md:hover:ui-rounded-none md:hover:ui-bg-transparent md:ui-h-auto md:p-0"
         >
           {language}
         </button>
@@ -50,9 +77,9 @@ export const Navbar: React.FC = () => {
 
 
   return (
-    <nav className="ui-absolute ui-w-full ui-top-0 ui-start-0 ui-bg-white ">
+    <nav className={`ui-absolute ui-w-full ui-top-0 ui-start-0 ${bgColor} ui-ease-out ui-duration-500`}>
       {/* navbar desktop */}
-      <div className="ui-max-w-[1553px] ui-flex ui-flex-wrap ui-items-center ui-justify-between ui-p-4 md:ui-mx-auto lg:ui-mx-auto xl:ui-mx-auto 2xl:ui-mx-auto">
+      <div className=" ui-max-w-[1553px] ui-flex ui-flex-wrap ui-items-center ui-justify-between ui-p-4 md:ui-mx-auto lg:ui-mx-auto xl:ui-mx-auto 2xl:ui-mx-auto">
         {/* Logo */}
         <a href="#" className="ui-flex ui-items-center">
           <img src="Kodify.svg" alt="Kodify Logo" className="ui-h-9" />
@@ -69,7 +96,7 @@ export const Navbar: React.FC = () => {
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={`hover:ui-font-bold ui-text-customGray ${activeLink === item.text
+                className={`hover:ui-font-bold ${colorText} ui-ease-out ui-duration-500 ${activeLink === item.text
                   ? 'xl:ui-border-b-4 xl:ui-border-black xl:ui-pb-5 xl:ui-h-[75px] 2xl:ui-border-b-4 2xl:ui-border-black 2xl:ui-pb-5'
                   : ''}`}
               >
@@ -80,26 +107,25 @@ export const Navbar: React.FC = () => {
 
           ))}
 
-          <div className="ui-flex ui-leading-5 ui-items-center ui-ml-4 ui-gap-x-[5px] md:ui-py-0 ui-text-richBlack md:p-0 md:ui-w-auto " onClick={toggleSecondMenu}>
+          <div className="ui-flex ui-leading-5 ui-items-center ui-ml-10  md:ui-py-0 ui-text-richBlack md:p-0 md:ui-w-auto " onClick={toggleSecondMenu}>
             {isSecondOpen ? (
               <>
-                <BsGlobeAmericas />
-                <span>ES</span>
+                <span className="ui-cursor-pointer ui-flex ui-px-3 ui-content-center ui-font-barlow ui-items-center ui-gap-x-[5px]">
+                  <BsGlobeAmericas size={24} />
+                </span>
+                ES
                 <span className="md:ui-inline"><BsFillCaretDownFill /></span>
               </>
             ) : (
-              <span className={`ui-text-[#091928CC] ui-flex ui-px-3 ui-content-center ui-font-barlow`}>
-                <BsGlobeAmericas /> ES
+              <span className={`${colorText} ui-cursor-pointer ui-flex ui-px-3 ui-content-center ui-font-barlow ui-items-center ui-gap-x-[5px]`}>
+                <BsGlobeAmericas size={24} color={`${globeColor}`} /> ES
               </span>
             )}
           </div>
-
-          <div className={`${isSecondOpen ? 'ui-h-[120px] ui-absolute ui-bg-white ui-flex ui-flex-col ui-items-center ui-top-[89px] ui-right-[1%] ui-w-[203px] ui-rounded-[10px]' : 'ui-hidden'}`}>
+          {/* Desktop Lenguaje */}
+          <div className={`${isSecondOpen ? 'ui-h-[120px] ui-absolute ui-bg-white ui-flex ui-flex-col ui-items-center ui-top-[89px] ui-right-[1%] 2xl:ui-right-[21.5%B] ui-w-[203px] ui-rounded-[10px]' : 'ui-hidden'}`}>
             {renderLanguageButtons(100)}
           </div>
-
-
-
         </ul>
 
         {/* Mobile Navigation Icon */}
