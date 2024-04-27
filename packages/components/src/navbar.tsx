@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
             )}
           </div>
           {/* Desktop Lenguaje */}
-          <div className={`${isSecondOpen ? 'ui-h-[120px] ui-absolute ui-bg-white ui-flex ui-flex-col ui-items-center ui-top-[89px] ui-right-[1%] 2xl:ui-right-[21.5%B] ui-w-[203px] ui-rounded-[10px]' : 'ui-hidden'}`}>
+          <div className={`${isSecondOpen ? 'ui-h-[120px] ui-absolute ui-bg-white ui-flex ui-flex-col ui-items-center ui-top-[89px] ui-right-[1%] 2xl:ui-right-[21.5%] ui-w-[203px] ui-rounded-[10px]' : 'ui-hidden'}`}>
             {renderLanguageButtons(100)}
           </div>
         </ul>
