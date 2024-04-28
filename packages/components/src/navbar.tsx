@@ -1,17 +1,17 @@
 "use client";
-import React, { useCallback, useState } from 'react';
+import React, { MouseEventHandler, useCallback, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
-import { navItems } from '../constants/constants';
+import { navItems } from '../../constants/constants';
 
 export const Navbar: React.FC = () => {
   const [nav, setNav] = React.useState<boolean>(false);
-  const [isSecondOpen, setIsSecondOpen] = useState(false);
+  const [isSecondOpen, setIsSecondOpen] = useState<boolean>(false);
   const [selectedLanguage, setSelectedLanguage] = useState<string>('');
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState<string | null>('');
 
-  const handleClick = (e) => {
+  const handleClick:MouseEventHandler<HTMLAnchorElement> = (e) => {
     e.preventDefault();
-    setActiveLink(e.currentTarget.getAttribute('data-name'));
+    setActiveLink(e?.currentTarget?.getAttribute('data-name'));
   };
   
   const handleNav = () => {
