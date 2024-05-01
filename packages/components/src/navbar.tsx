@@ -4,42 +4,33 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
 import { navItems } from '../../constants/constants';
 
-export const Navbar: React.FC = () => {
-  const [bgColor, setBgColor] = useState('');
-  const [globeColor, setglobeColor] = useState('white');
-  const [colorText, setColorText] = useState('ui-text-white')
+export const Navbar = () => {
+  const [isSticky, setSticky] = useState(false);
   const [nav, setNav] = React.useState<boolean>(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('');
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('ES');
   const [activeLink, setActiveLink] = useState('');
 
+
+  const checkScrollTop = () => {
+    if (!isSticky && window.scrollY > 10) {
+      setSticky(true);
+    } else if (isSticky && window.scrollY <= 10) {
+      setSticky(false);
+    }
+  };
+
   useEffect(() => {
-    const timerFondo = setTimeout(() => {
-      setBgColor('ui-bg-white');
-    }, 3000);
-
-    const timerglobe = setTimeout(() => {
-      setglobeColor('');
-    }, 3000);
-
-    const timerTexto = setTimeout(() => {
-      setColorText('ui-text-customGray');
-    }, 3000);
-
-    return () => {
-      clearTimeout(timerFondo);
-      clearTimeout(timerglobe);
-      clearTimeout(timerTexto);
-    };
-  }, []);
-
+    window.addEventListener('scroll', checkScrollTop);
+    return () => window.removeEventListener('scroll', checkScrollTop);
+  }, [isSticky]);
 
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setActiveLink(e.currentTarget.getAttribute('data-name') || '');
   };
-  
+
 
   const handleNav = () => {
     setNav(!nav);
@@ -50,7 +41,7 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const handleLanguageClick = (language: string): void => {
-    setSelectedLanguage(language);
+    setSelectedLanguage(language.slice(0, 2).toUpperCase());
   };
 
 
@@ -58,17 +49,17 @@ export const Navbar: React.FC = () => {
   const languages = ['Español', 'Ingles'];
 
   // Función para generar los botones de idioma
-  const renderLanguageButtons = (gap: number = 0) => {
+  const renderLanguageButtons = (gap: number = 0, padding: number = 0) => {
     return languages.map(language => (
-      <li key={language} style={{ gap: `${gap}px` }} className="ui-grid ui-pt-4 ui-grid-cols-2 ui-items-center">
+      <li key={language} style={{ gap: `${gap}px`, paddingTop: `${padding}px` }} className="grid grid-cols-2 items-center">
         <button
           onClick={() => handleLanguageClick(language)}
-          className="ui-justify-self-center ui-py-2 md:ui-py-0 ui-px-3 ui-text-richBlack md:hover:ui-text-richBlack ui-w-[64px] md:hover:ui-border-b-4 md:hover:ui-border-richBlack md:hover:ui-rounded-none md:hover:ui-bg-transparent md:ui-h-auto md:p-0"
+          className="justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0"
         >
           {language}
         </button>
         <div>
-          {selectedLanguage === language && <span><BsCheckCircleFill className='ui-ml-4' /></span>}
+          {selectedLanguage === language.slice(0, 2).toUpperCase() && <span><BsCheckCircleFill className='ml-4' /></span>}
         </div>
       </li>
     ));
@@ -77,63 +68,68 @@ export const Navbar: React.FC = () => {
 
 
   return (
-    <nav className={`ui-absolute ui-w-full ui-top-0 ui-start-0 ${bgColor} ui-ease-out ui-duration-500`}>
+    <nav className={`${isSticky ? 'sticky navBg' : 'absolute bg-transparent'}  w-full top-0 start-0 ease-out duration-500 `}>
       {/* navbar desktop */}
-      <div className=" ui-max-w-[1553px] ui-flex ui-flex-wrap ui-items-center ui-justify-between ui-p-4 md:ui-mx-auto lg:ui-mx-auto xl:ui-mx-auto 2xl:ui-mx-auto">
+      <div className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 sm:bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}>
         {/* Logo */}
-        <a href="#" className="ui-flex ui-items-center">
-          <img src="Kodify.svg" alt="Kodify Logo" className="ui-h-9" />
+        <a href="#" className="flex items-center">
+          <img src="Kodify.svg" alt="Kodify Logo" className="h-9" />
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="ui-hidden xl:ui-flex 2xl:ui-flex">
+        <ul className="hidden xl:flex 2xl:flex">
           {navItems.map(item => (
             <li
               key={item.id}
-              className="md:ui-ml-6  xl:ui-ml-6 2xl:ui-ml-6 ui-font-normal ui-leading-5"
+              className="md:ml-6 xl:ml-6 2xl:ml-6 font-normal leading-5"
             >
               <a
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={`hover:ui-font-bold ${colorText} ui-ease-out ui-duration-500 ${activeLink === item.text
-                  ? 'xl:ui-border-b-4 xl:ui-border-black xl:ui-pb-5 xl:ui-h-[75px] 2xl:ui-border-b-4 2xl:ui-border-black 2xl:ui-pb-5'
+                className={`transform hover:scale-110 hover:font-bold ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'} ${activeLink === item.text
+                  ? 'xl:border-b-4 xl:border-black xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:border-black 2xl:pb-5'
                   : ''}`}
               >
                 {item.text}
               </a>
 
+
             </li>
 
           ))}
 
-          <div className="ui-flex ui-leading-5 ui-items-center ui-ml-10  md:ui-py-0 ui-text-richBlack md:p-0 md:ui-w-auto " onClick={toggleSecondMenu}>
+          <div 
+            className={`flex relative leading-5 items-center ml-10 md:py-0 text-richBlack md:p-0 md:w-auto }`}
+            onMouseEnter={() => setIsSecondOpen(true)}
+            onClick={toggleSecondMenu}>
             {isSecondOpen ? (
               <>
-                <span className="ui-cursor-pointer ui-flex ui-px-3 ui-content-center ui-font-barlow ui-items-center ui-gap-x-[5px]">
-                  <BsGlobeAmericas size={24} />
+                <span className={`cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px] ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`}>
+                  <BsGlobeAmericas size={24} className={`${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`} />
+                  {selectedLanguage} {/* Muestra el idioma seleccionado */}
                 </span>
-                ES
-                <span className="md:ui-inline"><BsFillCaretDownFill /></span>
+                <span className="md:inline"><BsFillCaretDownFill /></span>
               </>
             ) : (
-              <span className={`${colorText} ui-cursor-pointer ui-flex ui-px-3 ui-content-center ui-font-barlow ui-items-center ui-gap-x-[5px]`}>
-                <BsGlobeAmericas size={24} color={`${globeColor}`} /> ES
+              <span className={`cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px] ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`}>
+                <BsGlobeAmericas size={24} className={`${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`} />
+                {selectedLanguage} {/* Muestra el idioma seleccionado */}
               </span>
             )}
-          </div>
-          {/* Desktop Lenguaje */}
-          <div className={`${isSecondOpen ? 'ui-h-[120px] ui-absolute ui-bg-white ui-flex ui-flex-col ui-items-center ui-top-[89px] ui-right-[1%] 2xl:ui-right-[21.5%] ui-w-[203px] ui-rounded-[10px]' : 'ui-hidden'}`}>
-            {renderLanguageButtons(100)}
+            {/* Desktop Lenguaje */}
+            <div className={`${isSecondOpen ? 'absolute bg-white flex flex-col items-center top-[89px] right-5 w-[203px] rounded-[10px]' : 'hidden'}`}>
+              {renderLanguageButtons(100, 0)}
+            </div>
           </div>
         </ul>
 
         {/* Mobile Navigation Icon */}
-        <div onClick={handleNav} className='ui-flex xl:ui-hidden 2xl:ui-hidden'>
+        <div onClick={handleNav} className='flex xl:hidden 2xl:hidden'>
           <BsXLg
 
             style={{ width: '32px', height: '28px' }}
-            className={`icon ui-left-8 ${nav ? 'visible' : ''}`}
+            className={`icon left-8 ${nav ? 'visible' : ''}`}
           />
           <BsList
             style={{ width: '32px', height: '28px' }}
@@ -143,17 +139,17 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Navigation item */}
         <div className={`${nav
-          ? 'ui-fixed ui-flex ui-flex-col ui-items-center ui-left-0 xl:ui-hidden 2xl:ui-hidden ui-top-16 ui-w-[100%] -ui-z-10 ui-h-[300px] ui-bg-white ui-bg-[#8B8C891A] ui-ease-in-out ui-duration-1000'
-          : 'ui-ease-in-out ui-flex ui-flex-col ui-items-center ui-h-[300px] ui-left-0 ui-w-[100%] ui-duration-500 ui-fixed ui-top-[-100%] -ui-z-10'
+          ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white bg-[#8B8C891A] ease-in-out duration-1000 -z-10'
+          : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
           } 
-        ${isSecondOpen ? 'ui-h-[410px]' : ''} 
+        ${isSecondOpen ? 'h-[410px]' : ''} 
         `}>
           <ul
             className={`${nav
-              ? 'ui-fixed ui-px-[116px] ui-py-4 ui-flex ui-rounded-xl ui-flex-col ui-items-center  xl:ui-hidden 2xl:ui-hidden `ui-top-16 ui-w-10/12 ui-left-auto ui-right-auto -ui-z-10 ui-h-[280px] ui-bg-[#8B8C891A] ui-ease-in-out ui-duration-500'
-              : 'ui-ease-in-out ui-flex-px-[116px] ui-py-4 ui-flex-col ui-items-center ui-h-[280px]  ui-w-10/12 ui-duration-500 ui-fixed ui-top-[-100%]  ui-left-auto ui-right-auto -ui-z-10'
+              ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center xl:hidden 2xl:hidden top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000'
+              : 'ease-in-out flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 duration-500 fixed top-[-100%]  left-auto right-auto'
               }
-          ${isSecondOpen ? 'ui-h-auto' : ''} 
+          ${isSecondOpen ? 'h-auto' : ''} 
           `}
           >
 
@@ -161,10 +157,12 @@ export const Navbar: React.FC = () => {
             {navItems.map(item => (
               <li
                 key={item.id}
-                className='ui-px-4 ui-mt-4 ui-rounded-xl hover:ui-bg-[#09192826] ui-w-52 ui-text-center '
+                className='px-4 mt-4 rounded-xl hover:bg-[#09192826] w-52 text-center '
               >
-                <a href="#"
-                  className={``}>
+                <a 
+                href={`/${item.text}`}
+                data-name={item.text}
+                onClick={handleClick}>
                   {item.text}
                 </a>
               </li>
@@ -173,17 +171,16 @@ export const Navbar: React.FC = () => {
 
             <div className={`
           ${isSecondOpen
-                ? 'ui-flex ui-flex-col ui-bg-[#09192826] ui-rounded-xl ui-ease-in-out ui-duration-500 '
+                ? 'flex flex-col bg-[#09192826] rounded-xl ease-in-out duration-500 '
                 : ''}
           `}>
-
-              <div className="ui-flex ui-pt-4 ui-items-center ui-pl-[69px] ui-gap-x-[20px] md:ui-py-0 ui-px-3 ui-text-richBlack md:p-0 md:ui-w-auto " onClick={toggleSecondMenu}>
-                <span className="ui-hidden "><BsGlobeAmericas /></span>
-                {isSecondOpen ? (<>{'Idioma'} <span className=" md:ui-inline"><BsFillCaretDownFill /></span></>) : <span className={`ui-text-[#091928CC] ui-block ui-px-3 ui-content-center ui-font-barlow`}>Idioma</span>}
+              <div className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 md:w-auto " onClick={toggleSecondMenu}>
+                <span className="hidden "><BsGlobeAmericas /></span>
+                {isSecondOpen ? (<>{'Idioma'} <span className=" md:inline"><BsFillCaretDownFill /></span></>) : <span className={`text-richBlack block px-3 content-center`}>Idioma</span>}
               </div>
 
-              <div className={`menu ${isSecondOpen ? 'open' : ''} ui-flex ui-flex-col ui-items-center ui-pl-12 ui-top-[90px] ui-w-[200px] ui-rounded-[10px]`}>
-                {renderLanguageButtons()}
+              <div className={`menu ${isSecondOpen ? 'open' : ''} flex flex-col items-center pl-12 top-[90px] w-[200px] rounded-[10px]`}>
+                {renderLanguageButtons( 0, 16)}
               </div>
             </div>
 

@@ -9,10 +9,53 @@
     --custom-color: #091928CC;
 }
 
-
-
 html{
     font-family: 'Barlow', sans-serif       ;
+}
+
+body{
+  background-color: aquamarine;
+  height: 2560px;
+}
+
+
+  @keyframes bgNav {
+    0% {
+      background-color: initial;
+    }
+    100% {
+      background-color: white;
+      color: var(--custom-color);
+    }
+  }
+
+
+  .navBg {
+    animation: bgNav 500ms ease-out forwards;
+  }
+
+
+@keyframes changeColor {
+  0% {
+    color: #FFFFFCCC  ;
+    opacity: 0;
+  }
+  100% {
+    color: var(--custom-color);
+    opacity: 1;
+  }
+}
+
+
+.navElement {
+  animation: changeColor 500ms ease-out forwards;
+  transition: opacity 300ms ease-out; 
+}
+
+
+.navGlobe {
+  animation: changeColor 500ms ease-out forwards;
+  transition: opacity 300ms ease-out; 
 }
 
 
@@ -26,7 +69,7 @@ html{
     opacity: 1;
    }
 
-/* Transicion de despligue de menu idiom */
+
 .menu {
     transition: max-height 1s ease-in-out, opacity 100ms ease-out;
     overflow: hidden;
@@ -35,7 +78,7 @@ html{
   }
   
   .menu.open {
-    max-height: 120px; /* Ajusta este valor según el tamaño de tu menú */
+    max-height: 120px; 
     opacity: 1;
   }
   
