@@ -4,6 +4,7 @@
 import React, { MouseEventHandler, useCallback, useEffect, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
 import { navItems } from '../../constants/constants';
+import { Lenguages } from '../../interfaces/lenguages';
 
 export const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -14,17 +15,35 @@ export const Navbar = () => {
 
 
   const checkScrollTop = () => {
-    if (!isSticky && window.scrollY > 10) {
-      setSticky(true);
-    } else if (isSticky && window.scrollY <= 10) {
-      setSticky(false);
+    if (window.innerWidth >= 1024) {
+      if (!isSticky && window.scrollY > 10) {
+        setSticky(true);
+      } else if (isSticky && window.scrollY <= 10) {
+        setSticky(false);
+      }
     }
   };
-
+  
   useEffect(() => {
+    const checkViewportWidth = () => {
+      if (window.innerWidth < 1024) {
+        setSticky(true);
+      } else {
+        checkScrollTop();
+      }
+    };
+  
+    window.addEventListener('resize', checkViewportWidth);
     window.addEventListener('scroll', checkScrollTop);
-    return () => window.removeEventListener('scroll', checkScrollTop);
+  
+    checkViewportWidth();
+  
+    return () => {
+      window.removeEventListener('resize', checkViewportWidth);
+      window.removeEventListener('scroll', checkScrollTop);
+    };
   }, [isSticky]);
+  
 
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -41,26 +60,32 @@ export const Navbar = () => {
     setIsSecondOpen(prevIsSecondOpen => !prevIsSecondOpen);
   }, []);
 
-  const handleLanguageClick = (language: string): void => {
-    setSelectedLanguage(language.slice(0, 2).toUpperCase());
+  // Lista de idiomas
+  const languages: Lenguages = {
+    'Español': 'ES',
+    'Inglés': 'EN',
   };
 
+  const handleLanguageClick = (language: string): void => {
+    setSelectedLanguage(languages[language] || '');
+};
 
-  // Lista de idiomas
-  const languages = ['Español', 'Ingles'];
 
   // Función para generar los botones de idioma
   const renderLanguageButtons = (gap: number = 0, padding: number = 0) => {
-    return languages.map(language => (
+    return Object.keys(languages).map(language => (
       <li key={language} style={{ gap: `${gap}px`, paddingTop: `${padding}px` }} className="grid grid-cols-2 items-center">
         <button
-          onClick={() => handleLanguageClick(language)}
-          className={`justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === language.slice(0, 2).toUpperCase() ? 'font-bold' : ''}`}
+           onClick={() => {
+            handleLanguageClick(language);
+            toggleSecondMenu();
+          }}
+          className={`justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
         >
           {language}
         </button>
         <div>
-          {selectedLanguage === language.slice(0, 2).toUpperCase() && <span><BsCheckCircleFill className='ml-4' /></span>}
+          {selectedLanguage === languages[language] && <span><BsCheckCircleFill className='ml-4' /></span>}
         </div>
       </li>
     ));
@@ -69,8 +94,9 @@ export const Navbar = () => {
 
 
 
+
   return (
-    <nav className={`${isSticky ? 'sticky navBg' : 'sticky bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}>
+    <nav className={`${isSticky ? 'sticky navBg' : 'absolute bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}>
       {/* navbar desktop */}
       <div className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 sm:bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}>
         {/* Logo */}
@@ -101,21 +127,20 @@ export const Navbar = () => {
 
           ))}
 
-          <div 
+          <div
             className={`flex relative leading-5 items-center ml-10 md:py-0 text-richBlack md:p-0 md:w-auto }`}
-            onMouseEnter={() => setIsSecondOpen(true)}
-            onClick={toggleSecondMenu}>
+            onMouseEnter={() => setIsSecondOpen(true)}>
             {isSecondOpen ? (
               <>
-                <span className={`cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px] ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`}>
-                  <BsGlobeAmericas size={24} className={`${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`} />
+                <span className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}>
+                  <BsGlobeAmericas size={24} />
                   {selectedLanguage} {/* Muestra el idioma seleccionado */}
                 </span>
                 <span className="md:inline"><BsFillCaretDownFill /></span>
               </>
             ) : (
-              <span className={`cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px] ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`}>
-                <BsGlobeAmericas size={24} className={`${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'}`} />
+              <span className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}>
+                <BsGlobeAmericas size={24}  />
                 {selectedLanguage} {/* Muestra el idioma seleccionado */}
               </span>
             )}
@@ -161,10 +186,10 @@ export const Navbar = () => {
                 key={item.id}
                 className='px-4 mt-4 w-52 text-center rounded-xl hover:bg-[#09192826] hover:font-bold '
               >
-                <a 
-                href={`/${item.text}`}
-                data-name={item.text}
-                onClick={handleClick}
+                <a
+                  href={`/${item.text}`}
+                  data-name={item.text}
+                  onClick={handleClick}
                 >
                   {item.text}
                 </a>
@@ -183,7 +208,7 @@ export const Navbar = () => {
               </div>
 
               <div className={`menu ${isSecondOpen ? 'open' : ''} flex flex-col items-center pl-12 top-[90px] rounded-[10px]`}>
-                {renderLanguageButtons( 0, 16)}
+                {renderLanguageButtons(0, 16)}
               </div>
             </div>
 
