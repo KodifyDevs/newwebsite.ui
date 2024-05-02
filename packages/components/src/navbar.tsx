@@ -54,7 +54,7 @@ export const Navbar = () => {
       <li key={language} style={{ gap: `${gap}px`, paddingTop: `${padding}px` }} className="grid grid-cols-2 items-center">
         <button
           onClick={() => handleLanguageClick(language)}
-          className="justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0"
+          className={`justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === language.slice(0, 2).toUpperCase() ? 'font-bold' : ''}`}
         >
           {language}
         </button>
@@ -67,8 +67,9 @@ export const Navbar = () => {
 
 
 
+
   return (
-    <nav className={`${isSticky ? 'sticky navBg' : 'absolute bg-transparent'}  w-full top-0 start-0 ease-out duration-500 `}>
+    <nav className={`${isSticky ? 'sticky navBg' : 'sticky bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}>
       {/* navbar desktop */}
       <div className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 sm:bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}>
         {/* Logo */}
@@ -147,7 +148,7 @@ export const Navbar = () => {
           <ul
             className={`${nav
               ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center xl:hidden 2xl:hidden top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000'
-              : 'ease-in-out flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 duration-500 fixed top-[-100%]  left-auto right-auto'
+              : 'flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 fixed top-[-100%] left-auto right-auto ease-in-out  duration-1000'
               }
           ${isSecondOpen ? 'h-auto' : ''} 
           `}
@@ -157,12 +158,13 @@ export const Navbar = () => {
             {navItems.map(item => (
               <li
                 key={item.id}
-                className='px-4 mt-4 rounded-xl hover:bg-[#09192826] w-52 text-center '
+                className='px-4 mt-4 w-52 text-center rounded-xl hover:bg-[#09192826] hover:font-bold '
               >
                 <a 
                 href={`/${item.text}`}
                 data-name={item.text}
-                onClick={handleClick}>
+                onClick={handleClick}
+                >
                   {item.text}
                 </a>
               </li>
@@ -171,15 +173,15 @@ export const Navbar = () => {
 
             <div className={`
           ${isSecondOpen
-                ? 'flex flex-col bg-[#09192826] rounded-xl ease-in-out duration-500 '
+                ? 'flex flex-col bg-[#09192826] w-[200px] rounded-xl ease-in-out duration-500 '
                 : ''}
           `}>
-              <div className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 md:w-auto " onClick={toggleSecondMenu}>
+              <div className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 sm:w-fit sm:mx-auto md:w-fit md:mx-auto " onClick={toggleSecondMenu}>
                 <span className="hidden "><BsGlobeAmericas /></span>
-                {isSecondOpen ? (<>{'Idioma'} <span className=" md:inline"><BsFillCaretDownFill /></span></>) : <span className={`text-richBlack block px-3 content-center`}>Idioma</span>}
+                {isSecondOpen ? (<> <span className="font-bold pl-5">{'Idioma'} </span><span className=" md:inline"><BsFillCaretDownFill /></span></>) : <span className={`text-richBlack block px-3 content-center`}>Idioma</span>}
               </div>
 
-              <div className={`menu ${isSecondOpen ? 'open' : ''} flex flex-col items-center pl-12 top-[90px] w-[200px] rounded-[10px]`}>
+              <div className={`menu ${isSecondOpen ? 'open' : ''} flex flex-col items-center pl-12 top-[90px] rounded-[10px]`}>
                 {renderLanguageButtons( 0, 16)}
               </div>
             </div>
