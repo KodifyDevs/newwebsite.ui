@@ -4,7 +4,7 @@
 import React, { MouseEventHandler, useCallback, useEffect, useState } from 'react';
 import { BsCheckCircleFill, BsFillCaretDownFill, BsGlobeAmericas, BsList, BsXLg } from 'react-icons/bs';
 import { navItems } from '../../constants/constants';
-import { Lenguages } from '../../interfaces/lenguages';
+import { Languages } from '../../interfaces/Languages';
 
 export const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -23,7 +23,7 @@ export const Navbar = () => {
       }
     }
   };
-  
+
   useEffect(() => {
     const checkViewportWidth = () => {
       if (window.innerWidth < 1024) {
@@ -32,18 +32,18 @@ export const Navbar = () => {
         checkScrollTop();
       }
     };
-  
+
     window.addEventListener('resize', checkViewportWidth);
     window.addEventListener('scroll', checkScrollTop);
-  
+
     checkViewportWidth();
-  
+
     return () => {
       window.removeEventListener('resize', checkViewportWidth);
       window.removeEventListener('scroll', checkScrollTop);
     };
   }, [isSticky]);
-  
+
 
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -61,14 +61,14 @@ export const Navbar = () => {
   }, []);
 
   // Lista de idiomas
-  const languages: Lenguages = {
+  const languages: Languages = {
     'Español': 'ES',
     'Inglés': 'EN',
   };
 
   const handleLanguageClick = (language: string): void => {
     setSelectedLanguage(languages[language] || '');
-};
+  };
 
 
   // Función para generar los botones de idioma
@@ -76,7 +76,7 @@ export const Navbar = () => {
     return Object.keys(languages).map(language => (
       <li key={language} style={{ gap: `${gap}px`, paddingTop: `${padding}px` }} className="grid grid-cols-2 items-center">
         <button
-           onClick={() => {
+          onClick={() => {
             handleLanguageClick(language);
             toggleSecondMenu();
           }}
@@ -127,28 +127,20 @@ export const Navbar = () => {
 
           ))}
 
-          <div
-            className={`flex relative leading-5 items-center ml-10 md:py-0 text-richBlack md:p-0 md:w-auto }`}
-            onMouseEnter={() => setIsSecondOpen(true)}>
-            {isSecondOpen ? (
-              <>
-                <span className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}>
-                  <BsGlobeAmericas size={24} />
-                  {selectedLanguage} {/* Muestra el idioma seleccionado */}
-                </span>
-                <span className="md:inline"><BsFillCaretDownFill /></span>
-              </>
-            ) : (
-              <span className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}>
-                <BsGlobeAmericas size={24}  />
-                {selectedLanguage} {/* Muestra el idioma seleccionado */}
-              </span>
-            )}
+          <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-richBlack md:p-0 md:w-auto">
+            <span className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}>
+              <BsGlobeAmericas size={24} />
+              {selectedLanguage} {/* Muestra el idioma seleccionado */}
+            </span>
+            <span className="md:inline BsFillCaretDownFill"><BsFillCaretDownFill /></span>
+
             {/* Desktop Lenguaje */}
-            <div className={`${isSecondOpen ? 'absolute bg-white flex flex-col items-center top-[89px] right-5 w-[203px] rounded-[10px]' : 'hidden'}`}>
+            <div className="submenu__Languages absolute flex flex-col items-center">
               {renderLanguageButtons(100, 0)}
             </div>
           </div>
+
+
         </ul>
 
         {/* Mobile Navigation Icon */}
