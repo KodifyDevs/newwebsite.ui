@@ -13,9 +13,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "tailwind.config.ts"
-,   "app/config.ts",
-    "./utils/loadData.ts" 
-   ],
+    "tailwind.config.ts",
+    "config/config.ts",
+    "graphql/loadData.ts"
+  ],
   "exclude": ["node_modules"]
 }
