@@ -1,8 +1,8 @@
 {
-    "extends": "@packages/typescript-config/react-library.json",
-    "compilerOptions": {
-      "outDir": "dist"
-    },
-    "include": ["src", "turbo", "interfaces", "constants"],
-    "exclude": ["node_modules", "dist"]
-  }
+  "extends": "@packages/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src", "turbo", "interfaces", "constants", "*.js", "*.ts" ],
+  "exclude": ["node_modules", "dist"]
+}

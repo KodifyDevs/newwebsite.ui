@@ -1,16 +1,6 @@
 {
     "name": "@packages/components",
     "version": "0.0.0",
-    "sideEffects": [
-        "**/*.css"
-    ],
-    "exports": {
-        "./footer": "./src/footer.tsx",
-        "./navbar": "./src/navbar.tsx",
-        "./navbar2": "./src/navbar2.tsx",
-        "./index": "./src/index.tsx",
-        "./styles.css": "./dist/index.css"
-    },
     "license": "MIT",
     "scripts": {
         "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",

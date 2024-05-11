@@ -1,8 +1,8 @@
-import { Navbar } from "@packages/components/navbar";
-import { ApolloWrapper } from "../lib/ApolloWrapper";
+import { Button, Navbar } from "@packages/components"
+import { ApolloWrapper } from "../graphql/ApolloWrapper";
 import "@packages/tailwind-config/globals.css"
 import "./globals.css";
-import "@packages/components/styles.css"
+
 export default function RootLayout({
   children,
 }: {
@@ -13,6 +13,7 @@ export default function RootLayout({
       <body>
         <ApolloWrapper>
            <Navbar />  
+           <Button />
           {children}
         </ApolloWrapper>
       </body>
