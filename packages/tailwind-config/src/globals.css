@@ -5,17 +5,20 @@
   --secondary-color: #F15025;
   --third-color: #00000033;
 
-  /* Colot text */
+  /* Color text */
   --custom-color: #091928CC;
+
+  /* Custom Color */
+  --custom-white: #FFFFFC;
+
+  /* primary fonts */
+  --primary-font: 'Barlow', sans-serif;
 }
 
-html {
-  font-family: 'Barlow', sans-serif;
-}
 
 body {
-  background-color: aquamarine;
   height: 2560px;
+  font-family: var(--primary-font);
 }
 
 
@@ -30,6 +33,16 @@ body {
   }
 }
 
+/*Hero*/
+.title {
+  font-size: clamp(30px, calc(30px + (64 - 30) * ((100vw - 319px) / (1535 - 319))), 64px);
+}
+
+.paragraph {
+  font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 319px) / (1535 - 319))), 18px);
+}
+
+/*Hero*/
 
 .navBg {
   animation: bgNav 500ms ease-out forwards;

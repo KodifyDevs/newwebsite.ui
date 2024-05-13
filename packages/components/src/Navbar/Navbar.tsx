@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   BsCheckCircleFill,
   BsFillCaretDownFill,
@@ -8,9 +8,11 @@ import {
   BsList,
   BsXLg,
 } from 'react-icons/bs';
-import { navItems } from '../../../constants/constants';
+// import { navItems } from '../../../constants/constants';
+import { Languages } from '../../../interfaces/Languages';
+import { NavbarProps } from '../../../interfaces/NavItem';
 
-function Navbar() {
+const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
   const [isSticky, setSticky] = useState(false);
   const [nav, setNav] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
@@ -47,7 +49,7 @@ function Navbar() {
     };
   }, [isSticky]);
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setActiveLink(e.currentTarget.getAttribute('data-name') || '');
   };
@@ -61,12 +63,12 @@ function Navbar() {
   }, []);
 
   // Lista de idiomas
-  const languages = {
+  const languages: Languages = {
     Español: 'ES',
     Inglés: 'EN',
   };
 
-  const handleLanguageClick = (language) => {
+  const handleLanguageClick = (language: string): void => {
     setSelectedLanguage(languages[language] || '');
   };
 

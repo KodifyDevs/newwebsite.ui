@@ -1,29 +1,28 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 // We want each package to be responsible for its own content.
-const config: Omit<Config, 'content'> = {
+const config: Omit<Config, "content"> = {
   theme: {
     extend: {
       screens: {
-        sm: { min: '319px', max: '767px' },
+        'sm': {'min': '319px', 'max': '767px'},
 
-        md: { min: '768px', max: '1023px' },
+        'md': {'min': '768px', 'max': '1023px'},
 
-        lg: { min: '1024px', max: '1279px' },
+        'lg': {'min': '1024px', 'max': '1279px'},
 
-        xl: { min: '1280px', max: '1535px' },
+        'xl': {'min': '1280px', 'max': '1535px'},
 
-        '2xl': { min: '1536px', max: '2560px' },
+        '2xl': {'min': '1536px', 'max': '2560px'}
       },
-      colors: {
-        richBlack: 'var(--primary-color)',
-        flame: {
-          900: 'var(--secondary-color)',
-        },
-        customGray: 'var(--custom-color)',
+      colors:{
+        'richBlack': 'var(--primary-color)',
+        'caquelicot': 'var(--secondary-color)',
+        'customGray': 'var(--custom-color)',
+        'customWhite': 'var(--custom-white)',
       },
       fontFamily: {
-        barlow: ['Barlow', 'sans-serif'],
+        'barlow': ['Barlow', 'sans-serif'],
       },
       opacity: {
         '10': '0.1',
@@ -39,13 +38,15 @@ const config: Omit<Config, 'content'> = {
       },
       lineHeight: {
         'leading-title': '38.4px',
-        'leading-7': '28.8',
+        'leading-title-desk': '76.8px',
+        'leading-7': '28.8px'
       },
       inset: {
         'inset-inline': 'auto',
-        'inset-top': '68px',
+        'inset-top': '68px'
       },
     },
+
   },
   plugins: [],
 };
