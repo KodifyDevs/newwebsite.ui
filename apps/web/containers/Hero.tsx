@@ -7,12 +7,12 @@ export const Hero = () => {
         <section>
           <div className="w-full bg-bgMobile">
             <div className="max-w-[1553px] lg:h-[580px] xl:flex xl:mx-auto ">
-              <div className="w-fit mx-auto xl:mt-[140px]">
+              <div className="w-fit mx-auto lg:mt-[140px]">
                 <div className="px-4 pt-6 text-left xl:w-[537px]">
-                  <h1 className="title font-bold text-richBlack leading-leading-title xl:leading-leading-title-desk 2xl:leading-leading-title-desk">
+                  <h1 className="title font-bold text-richBlack leading-leading-title xl:leading-leading-title-desk">
                     Crece junto a nosotros
                   </h1>
-                  <h2 className="mt-4 font-semibold text-2xl leading-leading-7 md:text-3xl lg:text-3xl md:leading-10 lg:leading-10 text-richBlack ">y alcanza el éxito que te mereces</h2>
+                  <h2 className="mt-4 font-semibold text-2xl leading-leading-7 md:text-3xl lg:text-3xl md:leading-10 text-richBlack ">y alcanza el éxito que te mereces</h2>
   
                   <div className="paragraph mt-4">
                     <p className="font-medium text-richBlack-80 leading-5">
