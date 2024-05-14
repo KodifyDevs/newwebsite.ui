@@ -6,10 +6,12 @@
   --third-color: #00000033;
 
   /* Color text */
-  --custom-color: #091928CC;
+  --primary-color-80: #091928CC;
 
   /* Custom Color */
-  --custom-white: #FFFFFC;
+  --white: #FFFFFC;
+  --white-Mob: #FAFAFA;
+  --green: #128C7E;
 
   /* primary fonts */
   --primary-font: 'Barlow', sans-serif;
@@ -33,7 +35,6 @@ body {
   }
 }
 
-/*Hero*/
 .title {
   font-size: clamp(30px, calc(30px + (64 - 30) * ((100vw - 319px) / (1535 - 319))), 64px);
 }
@@ -41,8 +42,6 @@ body {
 .paragraph {
   font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 319px) / (1535 - 319))), 18px);
 }
-
-/*Hero*/
 
 .navBg {
   animation: bgNav 500ms ease-out forwards;

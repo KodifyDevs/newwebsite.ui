@@ -15,7 +15,6 @@ export default function RootLayout({
       <body>
         <ApolloWrapper>
           <Navbar navItems={navItems} />
-          <Hero />
           {children}
         </ApolloWrapper>
       </body>

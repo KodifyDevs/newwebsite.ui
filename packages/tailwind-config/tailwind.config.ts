@@ -4,22 +4,13 @@ import type { Config } from "tailwindcss";
 const config: Omit<Config, "content"> = {
   theme: {
     extend: {
-      screens: {
-        'sm': {'min': '319px', 'max': '767px'},
-
-        'md': {'min': '768px', 'max': '1023px'},
-
-        'lg': {'min': '1024px', 'max': '1279px'},
-
-        'xl': {'min': '1280px', 'max': '1535px'},
-
-        '2xl': {'min': '1536px', 'max': '2560px'}
-      },
       colors:{
         'richBlack': 'var(--primary-color)',
         'caquelicot': 'var(--secondary-color)',
-        'customGray': 'var(--custom-color)',
-        'customWhite': 'var(--custom-white)',
+        'richBlack-80': 'var(--primary-color-80)',
+        'bgMobile': 'var(--white-Mob)',
+        'whatsappBtn': 'var(--green)',
+        'white': 'var(--white)',
       },
       fontFamily: {
         'barlow': ['Barlow', 'sans-serif'],

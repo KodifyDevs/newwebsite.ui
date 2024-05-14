@@ -8,7 +8,6 @@ import {
   BsList,
   BsXLg,
 } from 'react-icons/bs';
-// import { navItems } from '../../../constants/constants';
 import { Languages } from '../../../interfaces/Languages';
 import { NavbarProps } from '../../../interfaces/NavItem';
 
@@ -102,11 +101,11 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
 
   return (
     <nav
-      className={`${isSticky ? 'sticky navBg' : 'absolute bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}
+      className={`${isSticky ? 'sticky navBg z-10' : 'absolute bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}
     >
       {/* navbar desktop */}
       <div
-        className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 sm:bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}
+        className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -114,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden xl:flex 2xl:flex">
+        <ul className="hidden xl:flex 2xl:flex z-10">
           {navItems.map((item) => (
             <li
               key={item.id}
@@ -211,7 +210,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
           `}
             >
               <div
-                className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 sm:w-fit sm:mx-auto md:w-fit md:mx-auto "
+                className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 w-fit mx-auto md:w-fit md:mx-auto "
                 onClick={toggleSecondMenu}
               >
                 <span className="hidden ">
