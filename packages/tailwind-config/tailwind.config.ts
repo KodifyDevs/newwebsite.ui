@@ -5,11 +5,11 @@ const config: Omit<Config, "content"> = {
   theme: {
     extend: {
       colors:{
-        'richBlack': 'var(--primary-color)',
+        'rich-black': 'var(--primary-color)',
         'caquelicot': 'var(--secondary-color)',
-        'richBlack-80': 'var(--primary-color-80)',
-        'bgMobile': 'var(--white-Mob)',
-        'whatsappBtn': 'var(--green)',
+        'rich-black-80': 'var(--primary-color-80)',
+        'bgMobile': 'var(--white-mob)',
+        'dark-cyan': 'var(--green)',
         'white': 'var(--white)',
       },
       fontFamily: {
@@ -19,6 +19,8 @@ const config: Omit<Config, "content"> = {
         '10': '0.1',
       },
       fontSize: {
+        'title-clamp': 'clamp(30px, calc(30px + (64 - 30) * ((100vw - 319px) / (1535 - 319))), 64px)',
+        'paragraph-clamp': 'clamp(16px, calc(16px + (18 - 16) * ((100vw - 319px) / (1535 - 319))), 18px)', 
         sm: '0.8rem',
         base: '1rem',
         xl: '1.25rem',

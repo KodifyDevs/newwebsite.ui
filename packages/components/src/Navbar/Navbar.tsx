@@ -84,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
             handleLanguageClick(language);
             toggleSecondMenu();
           }}
-          className={`justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
+          className={`justify-self-center py-2 md:py-0 px-3 text-rich-black md:hover:text-rich-black w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
         >
           {language}
         </button>
@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
             </li>
           ))}
 
-          <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-richBlack md:p-0 md:w-auto">
+          <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-rich-black md:p-0 md:w-auto">
             <span
               className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}
             >
@@ -210,7 +210,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
           `}
             >
               <div
-                className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 w-fit mx-auto md:w-fit md:mx-auto "
+                className="flex pt-4 items-center justify-center gap-x-[20px] text-rich-black md:pt-4 w-fit mx-auto md:w-fit md:mx-auto "
                 onClick={toggleSecondMenu}
               >
                 <span className="hidden ">
@@ -225,7 +225,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
                     </span>
                   </>
                 ) : (
-                  <span className={`text-richBlack block px-3 content-center`}>
+                  <span className={`text-rich-black block px-3 content-center`}>
                     Idioma
                   </span>
                 )}

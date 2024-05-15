@@ -10,7 +10,7 @@
 
   /* Custom Color */
   --white: #FFFFFC;
-  --white-Mob: #FAFAFA;
+  --white-mob: #FAFAFA;
   --green: #128C7E;
 
   /* primary fonts */
@@ -33,14 +33,6 @@ body {
     background-color: white;
     color: var(--custom-color);
   }
-}
-
-.title {
-  font-size: clamp(30px, calc(30px + (64 - 30) * ((100vw - 319px) / (1535 - 319))), 64px);
-}
-
-.paragraph {
-  font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 319px) / (1535 - 319))), 18px);
 }
 
 .navBg {
