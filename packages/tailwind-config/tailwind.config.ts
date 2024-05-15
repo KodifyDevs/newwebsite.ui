@@ -18,7 +18,7 @@ const config: Omit<Config, "content"> = {
       dropShadow: {
         'button-default': `0px 4px 15px 0px var(--rich-black-10)`,
         'button-hover-default': `0px 4px 15px 0px var(--black)`,
-        'button-dark-cyan-dropshadow': `0px 4px 15px 0px var(--green-10)`,
+        'dark-cyan-dropshadow': `0px 4px 15px 0px var(--green-10)`,
 
       },
       fontFamily: {
