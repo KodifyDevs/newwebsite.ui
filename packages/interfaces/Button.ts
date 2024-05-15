@@ -6,4 +6,6 @@ export interface ButtonProps {
     dynamicIcon?: string;
     textColor?: string;
     textHover?: string;
+    dropShadow?: string;
+    dropShadowHover?: string;
 }

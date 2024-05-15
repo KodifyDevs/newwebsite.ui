@@ -32,6 +32,8 @@ export const Hero = () => {
                       textColor="text-white"
                       textHover="hover:text-dark-cyan"
                       dynamicIcon="BsWhatsapp"
+                      dropShadow="drop-shadow-button-dark-cyan-dropshadow"
+                      dropShadowHover="drop-shadow-button-dark-cyan-dropshadow"
                       >
                       Consulta
                     </Button>

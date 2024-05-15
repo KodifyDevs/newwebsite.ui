@@ -6,11 +6,20 @@ const config: Omit<Config, "content"> = {
     extend: {
       colors:{
         'rich-black': 'var(--primary-color)',
-        'caquelicot': 'var(--secondary-color)',
+        'rich-black-10': 'var(--primary-color-10)',
         'rich-black-80': 'var(--primary-color-80)',
+        'caquelicot': 'var(--secondary-color)',
         'bgMobile': 'var(--white-mob)',
         'dark-cyan': 'var(--green)',
+        'dark-cyan-10': 'var(--green-10)',
         'white': 'var(--white)',
+        'black': 'var(--black)'
+      },
+      dropShadow: {
+        'button-default': `0px 4px 15px 0px var(--rich-black-10)`,
+        'button-hover-default': `0px 4px 15px 0px var(--black)`,
+        'button-dark-cyan-dropshadow': `0px 4px 15px 0px var(--green-10)`,
+
       },
       fontFamily: {
         'barlow': ['Barlow', 'sans-serif'],

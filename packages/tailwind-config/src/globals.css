@@ -5,13 +5,17 @@
   --secondary-color: #F15025;
   --third-color: #00000033;
 
+  
   /* Color text */
+  --primary-color-10: #0919281A;
   --primary-color-80: #091928CC;
 
   /* Custom Color */
+  --black: #0000000D;
   --white: #FFFFFC;
   --white-mob: #FAFAFA;
   --green: #128C7E;
+  --green-10: #128C7E1A;
 
   /* primary fonts */
   --primary-font: 'Barlow', sans-serif;
