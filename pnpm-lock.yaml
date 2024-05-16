@@ -11,9 +11,6 @@ importers:
       '@packages/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
-      '@packages/typescript-config':
-        specifier: workspace:*
-        version: link:packages/typescript-config
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
@@ -57,9 +54,6 @@ importers:
       '@packages/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
-      '@packages/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
       '@types/eslint':
         specifier: ^8.56.5
         version: 8.56.5
@@ -84,9 +78,6 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
 
   packages/components:
     dependencies:
@@ -100,9 +91,6 @@ importers:
       '@packages/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
-      '@packages/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
       '@turbo/gen':
         specifier: ^1.12.4
         version: 1.12.4(@types/node@20.11.24)(typescript@5.3.3)
@@ -133,9 +121,6 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
 
   packages/eslint-config:
     devDependencies:
@@ -163,14 +148,9 @@ importers:
 
   packages/tailwind-config:
     devDependencies:
-      '@packages/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
-
-  packages/typescript-config: {}
 
 packages:
 

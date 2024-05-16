@@ -8,9 +8,9 @@ import {
   BsList,
   BsXLg,
 } from 'react-icons/bs';
-import { navItems } from '../../../constants/constants';
 
-function Navbar() {
+
+const Navbar = ({ navItems }) => {
   const [isSticky, setSticky] = useState(false);
   const [nav, setNav] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
@@ -83,7 +83,7 @@ function Navbar() {
             handleLanguageClick(language);
             toggleSecondMenu();
           }}
-          className={`justify-self-center py-2 md:py-0 px-3 text-richBlack md:hover:text-richBlack w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
+          className={`justify-self-center py-2 md:py-0 px-3 text-rich-black md:hover:text-rich-black w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
         >
           {language}
         </button>
@@ -100,11 +100,11 @@ function Navbar() {
 
   return (
     <nav
-      className={`${isSticky ? 'sticky navBg' : 'absolute bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}
+      className={`${isSticky ? 'sticky navBg z-10' : 'absolute bg-transparent'} w-full top-0 start-0 ease-out duration-500 `}
     >
       {/* navbar desktop */}
       <div
-        className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 sm:bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}
+        className={` max-w-[1553px] flex flex-wrap items-center justify-between  p-4 bg-white md:bg-white lg:bg-white md:mx-auto lg:mx-auto xl:mx-auto 2xl:mx-auto`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -112,7 +112,7 @@ function Navbar() {
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden xl:flex 2xl:flex">
+        <ul className="hidden xl:flex 2xl:flex z-10">
           {navItems.map((item) => (
             <li
               key={item.id}
@@ -133,7 +133,7 @@ function Navbar() {
             </li>
           ))}
 
-          <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-richBlack md:p-0 md:w-auto">
+          <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-rich-black md:p-0 md:w-auto">
             <span
               className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}
             >
@@ -167,7 +167,7 @@ function Navbar() {
         <div
           className={`${
             nav
-              ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white bg-[#8B8C891A] ease-in-out duration-1000 -z-10'
+              ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10'
               : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
           } 
         ${isSecondOpen ? 'h-[410px]' : ''} 
@@ -209,7 +209,7 @@ function Navbar() {
           `}
             >
               <div
-                className="flex pt-4 items-center justify-center gap-x-[20px] text-richBlack md:pt-4 sm:w-fit sm:mx-auto md:w-fit md:mx-auto "
+                className="flex pt-4 items-center justify-center gap-x-[20px] text-rich-black md:pt-4 w-fit mx-auto md:w-fit md:mx-auto "
                 onClick={toggleSecondMenu}
               >
                 <span className="hidden ">
@@ -224,7 +224,7 @@ function Navbar() {
                     </span>
                   </>
                 ) : (
-                  <span className={`text-richBlack block px-3 content-center`}>
+                  <span className={`text-rich-black block px-3 content-center`}>
                     Idioma
                   </span>
                 )}
