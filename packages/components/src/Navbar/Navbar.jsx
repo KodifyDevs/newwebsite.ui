@@ -122,7 +122,7 @@ const Navbar = ({ navItems }) => {
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={`transform hover:scale-110 hover:font-bold ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'} ${
+                className={`transform font-medium hover:scale-110 hover:font-bold ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'} ${
                   activeLink === item.text
                     ? 'xl:border-b-4 xl:border-black xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:border-black 2xl:pb-5'
                     : ''
