@@ -19,6 +19,8 @@ export const Button = ({
     <a className={`custom-button font-bold flex gap-x-2 px-[77px] py-[14px] cursor-pointer leading-5 group justify-center items-center w-auto h-auto rounded-[10px] mx-auto`}>
       {children}
       {IconComponent && <IconComponent />}
+      
+      {/* Custom button styles */}
       <style jsx>{`
         .custom-button {
           background: ${backgroundColor};
