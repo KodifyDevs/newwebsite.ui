@@ -119,17 +119,18 @@ const Navbar = ({ navItems }) => {
               className="md:ml-6 xl:ml-6 2xl:ml-6 font-normal leading-5"
             >
               <a
-                href={`/${item.text}`}
-                data-name={item.text}
-                onClick={handleClick}
-                className={`transform hover:scale-110 hover:font-bold ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'} ${
-                  activeLink === item.text
-                    ? 'xl:border-b-4 xl:border-black xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:border-black 2xl:pb-5'
-                    : ''
-                }`}
-              >
-                {item.text}
-              </a>
+  href={`/${item.text}`}
+  data-name={item.text}
+  onClick={handleClick}
+  className={`font-semibold ${isSticky ? 'navElement xl:border-rich-black' : 'text-[#FFFFFCCC] xl:border-white'} ${
+    activeLink === item.text
+      ? 'xl:border-b-4 xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:pb-5'
+      : ''
+  }`}
+>
+  {item.text}
+</a>
+
             </li>
           ))}
 
