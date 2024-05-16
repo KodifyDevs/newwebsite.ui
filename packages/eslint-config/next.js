@@ -19,13 +19,6 @@ module.exports = {
     browser: true,
   },
   plugins: ["only-warn"],
-  settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
-    },
-  },
   ignorePatterns: [
     // Ignore dotfiles
     ".*.js",

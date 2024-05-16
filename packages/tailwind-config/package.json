@@ -3,11 +3,10 @@
     "version": "0.0.0",
     "private": true,
     "exports": {
-      ".": "./tailwind.config.ts",
+      ".": "./tailwind.config.js",
       "./globals.css": "./src/globals.css"
     },
     "devDependencies": {
-      "@packages/typescript-config": "workspace:*",
       "tailwindcss": "^3.4.3"
     }
   }

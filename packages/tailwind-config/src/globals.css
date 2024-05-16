@@ -2,20 +2,23 @@
 
 :root {
   --primary-color: #091928;
+  --primary-color-10: #0919281A;
+  --primary-color-80: #091928CC;
   --secondary-color: #F15025;
   --third-color: #00000033;
+  --black: #0000000D;
+  --white: #FFFFFC;
+  --very-light-gray: #FAFAFA;
+  --green: #128C7E;
+  --green-10: #128C7E1A;
 
-  /* Colot text */
-  --custom-color: #091928CC;
+  --primary-font: 'Barlow', sans-serif;
 }
 
-html {
-  font-family: 'Barlow', sans-serif;
-}
 
 body {
-  background-color: aquamarine;
   height: 2560px;
+  font-family: var(--primary-font);
 }
 
 
@@ -29,7 +32,6 @@ body {
     color: var(--custom-color);
   }
 }
-
 
 .navBg {
   animation: bgNav 500ms ease-out forwards;
