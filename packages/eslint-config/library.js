@@ -13,13 +13,6 @@ module.exports = {
   env: {
     node: true,
   },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        project,
-      },
-    },
-  },
   ignorePatterns: [
     // Ignore dotfiles
     ".*.js",

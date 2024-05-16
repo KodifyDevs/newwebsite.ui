@@ -1,7 +1,4 @@
-import { NavItem } from "../interfaces/NavItem";
-
-
-export const navItems: NavItem[] = [
+export const navItems = [
   { id: 1, text: 'Inicio' },
   { id: 2, text: 'Nosotros' },
   { id: 3, text: 'Servicios' },

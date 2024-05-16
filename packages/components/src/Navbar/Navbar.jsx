@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
   BsCheckCircleFill,
   BsFillCaretDownFill,
@@ -8,10 +8,9 @@ import {
   BsList,
   BsXLg,
 } from 'react-icons/bs';
-import { Languages } from '../../../interfaces/Languages';
-import { NavbarProps } from '../../../interfaces/NavItem';
 
-const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
+
+const Navbar = ({ navItems }) => {
   const [isSticky, setSticky] = useState(false);
   const [nav, setNav] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
@@ -48,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
     };
   }, [isSticky]);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (e) => {
     e.preventDefault();
     setActiveLink(e.currentTarget.getAttribute('data-name') || '');
   };
@@ -62,12 +61,12 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
   }, []);
 
   // Lista de idiomas
-  const languages: Languages = {
+  const languages = {
     Español: 'ES',
     Inglés: 'EN',
   };
 
-  const handleLanguageClick = (language: string): void => {
+  const handleLanguageClick = (language) => {
     setSelectedLanguage(languages[language] || '');
   };
 
@@ -168,7 +167,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
         <div
           className={`${
             nav
-              ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white bg-[#8B8C891A] ease-in-out duration-1000 -z-10'
+              ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10'
               : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
           } 
         ${isSecondOpen ? 'h-[410px]' : ''} 

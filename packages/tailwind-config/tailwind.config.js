@@ -1,7 +1,5 @@
-import type { Config } from "tailwindcss";
-
 // We want each package to be responsible for its own content.
-const config: Omit<Config, "content"> = {
+const config = {
   theme: {
     extend: {
       colors:{
@@ -9,7 +7,7 @@ const config: Omit<Config, "content"> = {
         'rich-black-10': 'var(--primary-color-10)',
         'rich-black-80': 'var(--primary-color-80)',
         'caquelicot': 'var(--secondary-color)',
-        'bgMobile': 'var(--white-mob)',
+        'very-light-gray': 'var(--very-light-gray)',
         'dark-cyan': 'var(--green)',
         'dark-cyan-10': 'var(--green-10)',
         'white': 'var(--white)',
