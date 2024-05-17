@@ -11,6 +11,7 @@ const config = {
         'dark-cyan': 'var(--green)',
         'dark-cyan-10': 'var(--green-10)',
         'white': 'var(--white)',
+        'off-white': 'var(--white-80)',
         'black': 'var(--black)'
       },
       dropShadow: {

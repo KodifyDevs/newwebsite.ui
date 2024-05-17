@@ -119,17 +119,16 @@ const Navbar = ({ navItems }) => {
               className="md:ml-6 xl:ml-6 2xl:ml-6 font-normal leading-5"
             >
               <a
-  href={`/${item.text}`}
-  data-name={item.text}
-  onClick={handleClick}
-  className={`font-semibold ${isSticky ? 'navElement xl:border-rich-black' : 'text-[#FFFFFCCC] xl:border-white'} ${
-    activeLink === item.text
-      ? 'xl:border-b-4 xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:pb-5'
-      : ''
-  }`}
->
-  {item.text}
-</a>
+                href={`/${item.text}`}
+                data-name={item.text}
+                onClick={handleClick}
+                className={`font-semibold ${isSticky ? 'navElement xl:border-rich-black' : 'text-off-white xl:border-white'} ${activeLink === item.text
+                    ? 'xl:border-b-4 xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:pb-5'
+                    : ''
+                  }`}
+              >
+                {item.text}
+              </a>
 
             </li>
           ))}
@@ -166,20 +165,18 @@ const Navbar = ({ navItems }) => {
 
         {/* Mobile Navigation item */}
         <div
-          className={`${
-            nav
+          className={`${nav
               ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10'
               : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
-          } 
+            } 
         ${isSecondOpen ? 'h-[410px]' : ''} 
         `}
         >
           <ul
-            className={`${
-              nav
+            className={`${nav
                 ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center xl:hidden 2xl:hidden top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000'
                 : 'flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 fixed top-[-100%] left-auto right-auto ease-in-out  duration-1000'
-            }
+              }
           ${isSecondOpen ? 'h-auto' : ''} 
           `}
           >
@@ -202,11 +199,10 @@ const Navbar = ({ navItems }) => {
 
             <div
               className={`
-          ${
-            isSecondOpen
-              ? 'flex flex-col bg-[#09192826] w-[200px] rounded-xl ease-in-out duration-500 '
-              : ''
-          }
+          ${isSecondOpen
+                  ? 'flex flex-col bg-[#09192826] w-[200px] rounded-xl ease-in-out duration-500 '
+                  : ''
+                }
           `}
             >
               <div
