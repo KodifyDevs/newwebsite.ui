@@ -15,7 +15,7 @@ const Navbar = ({ navItems }) => {
   const [nav, setNav] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('ES');
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState(navItems[0].text);
 
   const checkScrollTop = () => {
     if (window.innerWidth >= 1024) {
@@ -49,7 +49,8 @@ const Navbar = ({ navItems }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setActiveLink(e.currentTarget.getAttribute('data-name') || '');
+    const linkText = e.target.getAttribute('data-name');
+    setActiveLink(linkText);
   };
 
   const handleNav = () => {
@@ -122,9 +123,9 @@ const Navbar = ({ navItems }) => {
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={`transform font-medium hover:scale-110 hover:font-bold ${isSticky ? 'navElement' : 'text-[#FFFFFCCC]'} ${
+                className={`transform hover:scale-110 hover:font-bold xl:border-rich-black ${isSticky ? 'navElement' : 'text-off-white xl:border-white '} ${
                   activeLink === item.text
-                    ? 'xl:border-b-4 xl:border-black xl:pb-5 xl:h-[75px] 2xl:border-b-4 2xl:border-black 2xl:pb-5'
+                    ? 'xl:border-b-4  xl:pb-5 xl:h-[75px] font-bold'
                     : ''
                 }`}
               >
@@ -135,7 +136,7 @@ const Navbar = ({ navItems }) => {
 
           <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-rich-black md:p-0 md:w-auto">
             <span
-              className={`${isSticky ? '' : 'text-[#FFFFFCCC]'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}
+              className={`${isSticky ? '' : 'text-off-white'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}
             >
               <BsGlobeAmericas size={24} />
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
