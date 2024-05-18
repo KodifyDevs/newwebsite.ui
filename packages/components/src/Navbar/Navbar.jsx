@@ -63,7 +63,7 @@ const Navbar = ({ navItems }) => {
 
   // Lista de idiomas
   const languages = {
-    'Español (LATAM)' : 'ES',
+    Español : 'ES',
     Inglés: 'EN',
   };
 
