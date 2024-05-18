@@ -63,8 +63,8 @@ const Navbar = ({ navItems }) => {
 
   // Lista de idiomas
   const languages = {
-    Español : 'ES',
     Inglés: 'EN',
+    Español : 'ES',
   };
 
   const handleLanguageClick = (language) => {
@@ -148,7 +148,7 @@ const Navbar = ({ navItems }) => {
             </span>
 
             {/* Desktop Lenguaje */}
-            <div className="submenu__Languages h-auto absolute flex flex-col items-center">
+            <div className="submenu__Languages p-3 absolute flex flex-col items-center">
               {renderLanguageButtons(0, 0)}
             </div>
           </div>
