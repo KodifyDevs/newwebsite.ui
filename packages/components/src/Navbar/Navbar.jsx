@@ -144,11 +144,11 @@ const Navbar = ({ navItems }) => {
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
             </span>
             <span className="md:inline BsFillCaretDownFill">
-              <BsFillCaretDownFill />
+              <BsFillCaretDownFill style={{color: isSticky ? '' : 'var(--white)'}}  />
             </span>
 
             {/* Desktop Lenguaje */}
-            <div className="submenu__Languages p-3 absolute flex flex-col items-center">
+            <div className="submenu__Languages p-3 absolute flex flex-col">
               {renderLanguageButtons(0, 0)}
             </div>
           </div>

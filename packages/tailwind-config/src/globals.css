@@ -117,16 +117,16 @@ body {
 .submenu__Languages {
   background: white;
   border-radius: 10px;
-  display: none;
+  display: block;
   opacity: 0;
   position: absolute;
   right: 0;
   top: 55px;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition: opacity 600ms ease-in-out, visibility 600ms ease-in-out;
   visibility: hidden;
   width: 203px;
 }
 
 .menu__languages .submenu__Languages .BsFillCaretDownFill {
-  transition-delay: 100ms;
+  transition-delay: 600ms;
 }
