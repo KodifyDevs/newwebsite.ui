@@ -117,14 +117,15 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className="md:ml-6 xl:ml-6 2xl:ml-6 font-normal leading-5"
+              className={`${isSticky ? 'md:ml-6 xl:ml-6 2xl:ml-6 leading-5 font-normal' : 'md:ml-6 xl:ml-6 2xl:ml-6 leading-5 font-medium'}`}
             >
               <a
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={`font-medium ${isSticky ? 'navElement xl:border-rich-black' : 'text-off-white xl:border-white'} ${activeLink === item.text
-                    ? 'xl:border-b-4 xl:pb-5 xl:h-[75px] font-bold'
+                className={` ${isSticky ? 'navElement xl:border-rich-black' : 'text-off-white xl:border-white '} 
+              ${activeLink === item.text
+                    ? 'text-white xl:border-b-4 xl:pb-5 xl:h-[75px] font-bold'
                     : ''
                   }`}
               >
@@ -136,7 +137,8 @@ const Navbar = ({ navItems }) => {
 
           <div className="menu__languages flex relative leading-5 items-center ml-10 md:py-0 text-rich-black md:p-0 md:w-auto">
             <span
-              className={`${isSticky ? '' : 'text-off-white'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]`}
+              className={`${isSticky ? '' : 'text-off-white'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]
+              `}
             >
               <BsGlobeAmericas size={24} />
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
@@ -167,16 +169,16 @@ const Navbar = ({ navItems }) => {
         {/* Mobile Navigation item */}
         <div
           className={`${nav
-              ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10'
-              : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
+            ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10'
+            : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : ''} 
         `}
         >
           <ul
             className={`${nav
-                ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center xl:hidden 2xl:hidden top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000'
-                : 'flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 fixed top-[-100%] left-auto right-auto ease-in-out  duration-1000'
+              ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center xl:hidden 2xl:hidden top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000'
+              : 'flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 fixed top-[-100%] left-auto right-auto ease-in-out  duration-1000'
               }
           ${isSecondOpen ? 'h-auto' : ''} 
           `}
