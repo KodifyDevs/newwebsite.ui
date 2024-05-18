@@ -92,13 +92,13 @@ body {
 
 .menu__languages .BsFillCaretDownFill {
   opacity: 0;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition: opacity 600ms ease-in-out, visibility 600ms ease-in-out;
   visibility: hidden;
 }
 
 .menu__languages:hover .BsFillCaretDownFill {
   opacity: 1;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition: opacity 600ms ease-in-out, visibility 600ms ease-in-out;
   visibility: visible;
 }
 
@@ -109,7 +109,7 @@ body {
   opacity: 1;
   right: 0;
   top: 55px;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  transition: opacity 600ms ease-in-out, visibility 600ms ease-in-out;
   visibility: visible;
   width: 203px;
 }
