@@ -117,7 +117,7 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`${isSticky ? 'md:ml-6 xl:ml-6 2xl:ml-6 leading-5 font-normal' : 'md:ml-6 xl:ml-6 2xl:ml-6 leading-5 font-medium'}`}
+              className={`${isSticky ? 'md:ml-6 leading-5 font-normal' : 'md:ml-6 leading-5 font-medium'}`}
             >
               <a
                 href={`/${item.text}`}
@@ -155,7 +155,7 @@ const Navbar = ({ navItems }) => {
         </ul>
 
         {/* Mobile Navigation Icon */}
-        <div onClick={handleNav} className="flex xl:hidden 2xl:hidden">
+        <div onClick={handleNav} className="flex xl:hidden">
           <BsXLg
             style={{ width: '32px', height: '28px' }}
             className={`icon left-8 ${nav ? 'visible' : ''}`}
@@ -169,16 +169,16 @@ const Navbar = ({ navItems }) => {
         {/* Mobile Navigation item */}
         <div
           className={`${nav
-            ? ' flex flex-col items-center h-[300px] left-0 xl:hidden fixed 2xl:hidden top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10'
-            : ' flex flex-col items-center h-[300px] left-0 w-[100%] fixed top-[-100%] ease-in-out duration-1000 z-10'
+            ? ' flex flex-col fixed items-center h-[300px] left-0 top-14 w-[100%] bg-white ease-in-out duration-1000 -z-10 xl:hidden '
+            : ' flex flex-col fixed items-center h-[300px] left-0 w-[100%] top-[-100%] ease-in-out duration-1000 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : ''} 
         `}
         >
           <ul
             className={`${nav
-              ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center xl:hidden 2xl:hidden top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000'
-              : 'flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 fixed top-[-100%] left-auto right-auto ease-in-out  duration-1000'
+              ? 'fixed px-[116px] py-4 flex rounded-xl flex-col items-center top-16 w-10/12 left-auto right-auto h-[280px] bg-[#8B8C891A] ease-in-out duration-1000 xl:hidden'
+              : 'flex px-[116px] py-4 flex-col items-center h-[280px]  w-10/12 fixed top-[-100%] left-auto right-auto ease-in-out  duration-1000' 
               }
           ${isSecondOpen ? 'h-auto' : ''} 
           `}
