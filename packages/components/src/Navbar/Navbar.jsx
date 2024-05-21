@@ -144,7 +144,7 @@ const Navbar = ({ navItems }) => {
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
             </span>
             <span className="md:inline BsFillCaretDownFill">
-              <BsFillCaretDownFill style={{color: isSticky ? '' : 'var(--white)'}}  />
+              <BsFillCaretDownFill className={`${isSticky ? '' : 'text-white'}`}  />
             </span>
 
             {/* Desktop Lenguaje */}
