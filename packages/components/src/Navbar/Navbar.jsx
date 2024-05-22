@@ -84,7 +84,7 @@ const Navbar = ({ navItems }) => {
             handleLanguageClick(language);
             toggleSecondMenu();
           }}
-          className={`justify-self-center w-[130px] py-2 px-3 md:py-0 md:p-0 text-justify text-rich-black md:hover:text-rich-black md:hover:bg-transparent md:hover:rounded-none md:h-auto ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
+          className={`justify-self-center w-[130px] py-2 px-3 text-justify text-rich-black md:py-0 md:p-0 md:hover:text-rich-black md:hover:bg-transparent md:hover:rounded-none md:h-auto ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
 
         >
           {language}
