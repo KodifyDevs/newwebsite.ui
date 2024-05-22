@@ -118,7 +118,7 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`${isSticky ? 'md:ml-6 xl:ml-6 2xl:ml-6 leading-5 font-normal' : 'md:ml-6 xl:ml-6 2xl:ml-6 leading-5 font-medium'}`}
+              className={`leading-5 ${isSticky ? 'font-normal' : 'font-medium'} md:ml-6 xl:ml-6`}
             >
               <a
                 href={`/${item.text}`}
@@ -141,15 +141,15 @@ const Navbar = ({ navItems }) => {
               className={`${isSticky ? '' : 'text-off-white'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]
               `}
             >
-              <BsGlobeAmericas size={24} style={{color: isSticky ? 'var(--primary-color-80)' : ''}} />
+              <BsGlobeAmericas size={24} className={`${isSticky ? 'rich-black-80' : ''}`} />
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
             </span>
             <span className="md:inline BsFillCaretDownFill">
-              <BsFillCaretDownFill />
+              <BsFillCaretDownFill className={`${isSticky ? '' : 'text-white'}`}  />
             </span>
 
             {/* Desktop Lenguaje */}
-            <div className="submenu__Languages p-3 absolute flex flex-col items-center">
+            <div className="submenu__Languages p-3 absolute flex flex-col">
               {renderLanguageButtons(0, 0)}
             </div>
           </div>
