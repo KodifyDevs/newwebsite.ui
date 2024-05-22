@@ -63,8 +63,8 @@ const Navbar = ({ navItems }) => {
 
   // Lista de idiomas
   const languages = {
-    Español: 'ES',
-    Inglés: 'EN',
+    'English': 'EN',
+    'Español (LATAM)' : 'ES',
   };
 
   const handleLanguageClick = (language) => {
@@ -72,26 +72,27 @@ const Navbar = ({ navItems }) => {
   };
 
   // Función para generar los botones de idioma
-  const renderLanguageButtons = (gap = 0, padding = 0) => {
+  const renderLanguageButtons = (gap, padding) => {
     return Object.keys(languages).map((language) => (
       <li
         key={language}
         style={{ gap: `${gap}px`, paddingTop: `${padding}px` }}
-        className="grid grid-cols-2 items-center"
+        className="grid grid-cols-[145px_minmax(auto,1fr)_10px] items-center mb-2"
       >
         <button
           onClick={() => {
             handleLanguageClick(language);
             toggleSecondMenu();
           }}
-          className={`justify-self-center py-2 md:py-0 px-3 text-rich-black md:hover:text-rich-black w-[64px] md:hover:rounded-none md:hover:bg-transparent md:h-auto md:p-0 ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
+          className={`justify-self-center w-[130px] py-2 px-3 text-justify text-rich-black md:py-0 md:p-0 md:hover:text-rich-black md:hover:bg-transparent md:hover:rounded-none md:h-auto ${selectedLanguage === languages[language] ? 'font-bold' : ''}`}
+
         >
           {language}
         </button>
         <div>
           {selectedLanguage === languages[language] && (
-            <span>
-              <BsCheckCircleFill className="ml-4" />
+            <span className="flex relative justify-center left-3">
+              <BsCheckCircleFill />
             </span>
           )}
         </div>
@@ -117,7 +118,7 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`${isSticky ? 'md:ml-6 leading-5 font-normal' : 'md:ml-6 leading-5 font-medium'}`}
+              className={`leading-5 ${isSticky ? 'font-normal' : 'font-medium'} md:ml-6`}
             >
               <a
                 href={`/${item.text}`}
@@ -140,16 +141,17 @@ const Navbar = ({ navItems }) => {
               className={`${isSticky ? '' : 'text-off-white'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]
               `}
             >
+
               <BsGlobeAmericas size={24} className={`${isSticky ? 'text-rich-black-80' : ''}`} />
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
             </span>
             <span className="md:inline BsFillCaretDownFill">
-              <BsFillCaretDownFill />
+              <BsFillCaretDownFill className={`${isSticky ? '' : 'text-white'}`}  />
             </span>
 
             {/* Desktop Lenguaje */}
-            <div className="submenu__Languages absolute flex flex-col items-center">
-              {renderLanguageButtons(100, 0)}
+            <div className="submenu__Languages p-3 absolute flex flex-col">
+              {renderLanguageButtons(0, 0)}
             </div>
           </div>
         </ul>
