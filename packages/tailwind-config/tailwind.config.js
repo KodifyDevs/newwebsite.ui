@@ -5,6 +5,7 @@ const config = {
       colors:{
         'rich-black': 'var(--primary-color)',
         'rich-black-10': 'var(--primary-color-10)',
+        'rich-black-15': 'var(--primary-color-15)',
         'rich-black-80': 'var(--primary-color-80)',
         'caquelicot': 'var(--secondary-color)',
         'very-light-gray': 'var(--very-light-gray)',

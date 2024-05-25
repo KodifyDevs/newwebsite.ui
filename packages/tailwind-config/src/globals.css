@@ -3,6 +3,7 @@
 :root {
   --primary-color: #091928;
   --primary-color-10: #0919281A;
+  --primary-color-15: #09192826;
   --primary-color-80: #091928CC;
   --secondary-color: #F15025;
   --third-color: #00000033;
@@ -30,7 +31,7 @@ body {
 
   100% {
     background-color: white;
-    color: var(--custom-color);
+    color: var(--primary-color-80);
   }
 }
 
@@ -76,16 +77,19 @@ body {
 
 
 .menu {
-  transition: max-height 1s ease-in-out, opacity 100ms ease-out;
-  overflow: hidden;
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
+  transition: max-height 500ms ease-in-out;
 }
 
+
 .menu.open {
-  max-height: 120px;
+  max-height: 100px;
   opacity: 1;
+  transition: max-height 500ms ease-in-out;
 }
+
 .menu__languages {
   position: relative;
 }
