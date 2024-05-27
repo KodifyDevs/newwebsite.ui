@@ -47,7 +47,7 @@ export const LanguageMob = ({isOpen, toggleMenu, languagesMob}) => {
           </div>
       
           <div
-            className={`menu pt-4 gap-y-4 ${isOpen ? 'open' : ''} flex flex-col items-center pl-12 top-[90px] rounded-[10px]`}   
+            className={`menu pt-4 gap-y-4 flex flex-col items-center pl-12 top-[90px] rounded-[10px] ${isOpen ? 'open' : ''}`}   
           >
             {renderLanguageButtons()}
           </div>

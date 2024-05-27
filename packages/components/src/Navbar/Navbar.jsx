@@ -102,7 +102,7 @@ const Navbar = ({ navItems }) => {
     >
       {/* navbar desktop */}
       <div
-        className={`max-w-[1553px] flex flex-wrap bg-white lg:bg-transparent items-center justify-between p-4`}
+        className={` flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -114,7 +114,7 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`lg:ml-4 leading-5 ${isSticky ? 'font-normal' : 'font-medium'}`}
+              className={`${isSticky ? 'font-normal' : 'font-medium'} lg:ml-4 leading-5`}
             >
               <a
                 href={`/${item.text}`}
@@ -122,7 +122,7 @@ const Navbar = ({ navItems }) => {
                 onClick={handleClick}
                 className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-off-white xl:border-white '} 
               ${activeLink === item.text
-                    ? 'text-white xl:border-b-4 lg:pb-5 lg:h-[75px] font-bold'
+                    ? 'text-white font-bold xl:border-b-4 lg:pb-5 lg:h-[75px]'
                     : ''
                   }`}
               >
@@ -167,7 +167,7 @@ const Navbar = ({ navItems }) => {
         {/* Mobile Navigation item */}
         <div
           className={`flex flex-col fixed items-center h-[300px] left-0 ${nav 
-            ? ' lg:hidden top-14 w-[100%] bg-white ease-in-out duration-500 -z-10'
+            ? ' top-14 w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden '
             : ' w-[100%] top-[-100%] ease-in-out duration-500 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : 'h-[300px]'} 
@@ -175,7 +175,7 @@ const Navbar = ({ navItems }) => {
         >
           <ul
             className={`flex px-[116px] py-4 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-              ? 'rounded-xl top-16 h-[280px] bg-rich-black-10 lg:hidden ease-in-out duration-500'
+              ? 'rounded-xl top-16 h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
           ${isSecondOpen ? 'h-[347px]' : ''} 
