@@ -167,15 +167,15 @@ const Navbar = ({ navItems }) => {
         {/* Mobile Navigation item */}
         <div
           className={`flex flex-col fixed items-center h-[300px] left-0 ${nav 
-            ? ' top-14 w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden '
+            ? ' top-[75px] w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden '
             : ' w-[100%] top-[-100%] ease-in-out duration-500 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : 'h-[300px]'} 
         `}
         >
           <ul
-            className={`flex px-[116px] py-4 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-              ? 'rounded-xl top-16 h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
+            className={`flex px-[116px] pb-6 pt-2 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
+              ? 'rounded-xl top-[75pxj] h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
           ${isSecondOpen ? 'h-[347px]' : ''} 
