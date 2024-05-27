@@ -114,7 +114,7 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`${isSticky ? 'font-normal' : 'font-medium'} lg:ml-4 leading-5`}
+              className={`${isSticky ? 'font-normal' : 'font-medium'}leading-5 lg:ml-4 `}
             >
               <a
                 href={`/${item.text}`}
