@@ -34,14 +34,14 @@ export const LanguageMob = ({ isOpen, toggleMenu, languagesMob }) => {
         className={`flex items-center text-rich-black w-fit mx-auto pl-3`}
         onClick={toggleMenu}
       >
-        <span className={`${isOpen ? 'font-bold' : 'font-medium content-center'} px-3`}>
+        <span className={`${isOpen ? 'font-bold' : 'font-medium'} content-center px-3`}>
           {'Idioma'}
         </span>
         {isOpen ? <BsFillCaretDownFill /> : <BsFillCaretDownFill className="text-rich-black-80"/>}
       </div>
 
       <div
-        className={`menu pt-4 gap-y-4 flex flex-col items-center pl-12 top-[90px] rounded-[10px] ${isOpen ? 'open' : ''}`}
+        className={`menu flex flex-col pt-4 p-[6px] pl-12 top-[90px] gap-y-4 items-center rounded-[10px] ${isOpen ? 'open' : ''}`}
       >
         {renderLanguageButtons()}
       </div>
