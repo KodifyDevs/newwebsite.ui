@@ -110,7 +110,7 @@ const Navbar = ({ navItems }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex z-10">
+        <ul className="hidden z-10 lg:flex">
           {navItems.map((item) => (
             <li
               key={item.id}
@@ -185,7 +185,11 @@ const Navbar = ({ navItems }) => {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="text-rich-black text-center font-medium px-4 mt-4 w-52 rounded-xl hover:bg-rich-black-15 hover:font-bold"
+                className={`text-rich-black text-center font-medium px-4 mt-4 w-52 rounded-xl hover:bg-rich-black-15 hover:font-bold
+                ${activeLink === item.text
+                  ? 'bg-rich-black-15 font-bold'
+                  : ''
+                }`}
               >
                 <a
                   href={`/${item.text}`}
@@ -196,9 +200,7 @@ const Navbar = ({ navItems }) => {
                 </a>
               </li>
             ))}
-            {/* Mobile Idioma menu */}
-
-           
+            {/* Mobile Idioma menu */} 
             <LanguageMob
                 isOpen={isSecondOpen}
                 toggleMenu={toggleSecondMenu}
