@@ -4,6 +4,7 @@ import { ApolloWrapper } from "../graphql/ApolloWrapper";
 import { Navbar } from "@packages/components"
 import { navItems} from "../constants/constants"
 import StyledJsxRegistry from "./registry";
+import { LanguageProvider } from "@packages/contexts/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -12,8 +13,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ApolloWrapper>
-          <Navbar navItems={navItems} />
-          <StyledJsxRegistry>{children}</StyledJsxRegistry>
+          <LanguageProvider>
+            <Navbar navItems={navItems} />
+            <StyledJsxRegistry>{children}</StyledJsxRegistry>
+          </LanguageProvider>
         </ApolloWrapper>
       </body>
     </html>
