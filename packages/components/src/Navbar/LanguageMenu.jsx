@@ -19,7 +19,7 @@ export const LanguageMob = ({ isOpen, toggleMenu, languagesMob }) => {
         </button>
         <div>
           {selectedLanguage === languagesMob[language] && (
-            <span className="flex relative left-[5px]">
+            <span className="flex relative left-[9px]">
               <BsCheckCircleFill />
             </span>
           )}
@@ -29,7 +29,7 @@ export const LanguageMob = ({ isOpen, toggleMenu, languagesMob }) => {
   };
 
   return (
-    <div className={`flex flex-col mt-4 rounded-xl w-[200px] ${isOpen ? 'bg-rich-black-15 h-[200px] ease-in-out duration-500' : 'h-0 ease-in-out duration-300'}`}>
+    <div className={`flex flex-col mt-4 rounded-xl w-[200px] ${isOpen ? 'bg-rich-black-15 h-[110px] ease-in-out duration-500' : 'h-0 ease-in-out duration-300'}`}>
       <div
         className={`flex items-center text-rich-black w-fit mx-auto pl-3`}
         onClick={toggleMenu}
