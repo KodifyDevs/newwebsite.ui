@@ -156,11 +156,11 @@ const Navbar = ({ navItems }) => {
         <div onClick={handleNav} className="flex lg:hidden">
           <BsXLg
             style={{ width: '32px', height: '28px' }}
-            className={`icon left-8 ${nav ? 'visible' : ''}`}
+            className={`icon left-8 ${nav ? 'visible text-rich-black' : ''}`}
           />
           <BsList
             style={{ width: '32px', height: '28px' }}
-            className={`icon ${nav ? '' : 'visible'}`}
+            className={`icon ${nav ? '' : 'visible text-rich-black'}`}
           />
         </div>
 
