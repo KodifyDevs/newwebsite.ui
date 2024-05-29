@@ -98,11 +98,11 @@ const Navbar = ({ navItems }) => {
 
   return (
     <nav
-      className={`${isSticky ? 'sticky navBg z-10' : 'absolute'} w-full top-0 start-0 ease-out duration-500 `}
+      className={`${isSticky ? 'sticky navBg z-10' : 'absolute'} w-full top-0 start-0 ease-out duration-500`}
     >
       {/* navbar desktop */}
       <div
-        className={`${nav ? '' : 'shadow-[0px_4px_15px_0px_var(--primary-color-10)]'} flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent lg:shadow-none`}
+        className={`${nav ? '' : 'shadow-[0px_4px_15px_0px_var(--primary-color-10)]'} flex flex-wrap max-w-[1553px] mx-auto p-4 bg-white items-center justify-between lg:bg-transparent lg:shadow-none`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
