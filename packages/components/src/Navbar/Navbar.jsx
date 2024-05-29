@@ -110,7 +110,7 @@ const Navbar = ({ navItems }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex z-10">
+        <ul className="hidden z-10 lg:flex">
           {navItems.map((item) => (
             <li
               key={item.id}
@@ -156,18 +156,18 @@ const Navbar = ({ navItems }) => {
         <div onClick={handleNav} className="flex lg:hidden">
           <BsXLg
             style={{ width: '32px', height: '28px' }}
-            className={`icon left-8 ${nav ? 'visible' : ''}`}
+            className={`icon left-8 ${nav ? 'visible text-rich-black' : ''}`}
           />
           <BsList
             style={{ width: '32px', height: '28px' }}
-            className={`icon ${nav ? '' : 'visible'}`}
+            className={`icon ${nav ? '' : 'visible text-rich-black'}`}
           />
         </div>
 
         {/* Mobile Navigation item */}
         <div
           className={`flex flex-col fixed items-center h-[300px] left-0 ${nav 
-            ? ' top-[68px] w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden'
+            ? 'top-[68px] w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden'
             : ' w-[100%] top-[-100%] ease-in-out duration-500 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : 'h-[300px]'} 
@@ -175,18 +175,21 @@ const Navbar = ({ navItems }) => {
         >
           <ul
             className={`flex px-[116px] pb-6 pt-2 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-
-              ? 'rounded-xl top-[68px] h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
+              ? 'rounded-xl top-[68px] h-[280px] bg-winchester-gray ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
-          ${isSecondOpen ? 'h-[347px]' : ''} 
+          ${isSecondOpen ? 'h-[358px]' : ''} 
           `}
           >
             {/* Mobile Navigation Items */}
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="text-rich-black text-center font-medium px-4 mt-4 w-52 rounded-xl hover:bg-rich-black-15 hover:font-bold"
+                className={`text-rich-black text-center font-medium px-4 mt-4 w-52 rounded-xl hover:bg-rich-black-15 hover:font-bold
+                ${activeLink === item.text
+                  ? 'bg-rich-black-15 font-bold'
+                  : ''
+                }`}
               >
                 <a
                   href={`/${item.text}`}
@@ -197,9 +200,7 @@ const Navbar = ({ navItems }) => {
                 </a>
               </li>
             ))}
-            {/* Mobile Idioma menu */}
-
-           
+            {/* Mobile Idioma menu */} 
             <LanguageMob
                 isOpen={isSecondOpen}
                 toggleMenu={toggleSecondMenu}

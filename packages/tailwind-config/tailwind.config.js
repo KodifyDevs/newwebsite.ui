@@ -10,6 +10,7 @@ const config = {
         'caquelicot': 'var(--secondary-color)',
         'very-light-gray': 'var(--very-light-gray)',
         'dark-cyan': 'var(--green)',
+        'winchester-gray': 'var(--winchester-gray)',
         'dark-cyan-10': 'var(--green-10)',
         'white': 'var(--white)',
         'off-white': 'var(--white-80)',
