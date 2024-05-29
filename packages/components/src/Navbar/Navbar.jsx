@@ -175,10 +175,10 @@ const Navbar = ({ navItems }) => {
         >
           <ul
             className={`flex px-[116px] pb-6 pt-2 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-              ? 'rounded-xl top-[68px] h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
+              ? 'rounded-xl top-[68px] h-[280px] bg-winchester-gray ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
-          ${isSecondOpen ? 'h-[347px]' : ''} 
+          ${isSecondOpen ? 'h-[358px]' : ''} 
           `}
           >
             {/* Mobile Navigation Items */}
