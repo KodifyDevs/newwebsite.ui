@@ -165,7 +165,7 @@ const Navbar = ({ navItems }) => {
 
         {/* Mobile Navigation item */}
         <div
-          className={`flex flex-col fixed items-center h-[300px] left-0 ${nav 
+          className={`flex flex-col fixed items-center h-[300px] left-0 px-4 ${nav 
             ? 'top-[68px] w-[100%] bg-white ease-in-out duration-500 shadow-[0px_4px_15px_0px_var(--primary-color-10)] -z-10 lg:hidden'
             : ' w-[100%] top-[-100%] ease-in-out duration-500 z-10'
             } 
@@ -173,8 +173,8 @@ const Navbar = ({ navItems }) => {
         `}
         >
           <ul
-            className={`flex px-[116px] pb-6 pt-2 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-              ? 'rounded-xl top-[68px] h-[280px] bg-winchester-gray ease-in-out duration-500 lg:hidden'
+            className={`flex relative flex-col items-center w-full pb-6 pt-2 left-auto right-auto ${nav
+              ? 'rounded-xl h-[280px] bg-winchester-gray ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
           ${isSecondOpen ? 'h-[358px]' : ''} 
