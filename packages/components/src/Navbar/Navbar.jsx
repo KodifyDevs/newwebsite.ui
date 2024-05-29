@@ -114,13 +114,13 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`${isSticky ? 'font-normal' : 'font-medium'}leading-5 lg:ml-4 `}
+              className={`${isSticky ? 'font-normal' : 'font-medium'} leading-5 lg:ml-4 `}
             >
               <a
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-baby-powde-80 xl:border-baby-powder '}
+                className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-baby-powde-80 xl:border-baby-powder'}
               ${activeLink === item.text
                     ? 'text-baby-powder font-bold lg:pb-5 lg:h-[75px] xl:border-b-4'
                     : ''
