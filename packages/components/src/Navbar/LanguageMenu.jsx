@@ -20,7 +20,7 @@ export const LanguageMob = ({ isOpen, toggleMenu, languagesMob }) => {
         <div>
           {selectedLanguage === languagesMob[language] && (
             <span className="flex relative left-[9px]">
-              <BsCheckCircleFill />
+              <BsCheckCircleFill className="text-rich-black" />
             </span>
           )}
         </div>
