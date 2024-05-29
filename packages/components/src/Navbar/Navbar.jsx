@@ -102,7 +102,7 @@ const Navbar = ({ navItems }) => {
     >
       {/* navbar desktop */}
       <div
-        className={` flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent`}
+        className={`flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -120,9 +120,9 @@ const Navbar = ({ navItems }) => {
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-off-white xl:border-white '} 
+                className={` {isSticky ? 'navElement lg:border-rich-black' : 'text-off-white xl:border-white '} 
               ${activeLink === item.text
-                    ? 'text-white font-bold xl:border-b-4 lg:pb-5 lg:h-[75px]'
+                    ? 'text-white font-bold lg:pb-5 lg:h-[75px] xl:border-b-4'
                     : ''
                   }`}
               >
@@ -175,7 +175,7 @@ const Navbar = ({ navItems }) => {
         >
           <ul
             className={`flex px-[116px] pb-6 pt-2 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-              ? 'rounded-xl top-[68pxj] h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
+              ? 'rounded-xl top-[68px] h-[280px] bg-rich-black-10 ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
           ${isSecondOpen ? 'h-[347px]' : ''} 
@@ -185,7 +185,7 @@ const Navbar = ({ navItems }) => {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="px-4 mt-4 w-52 text-center rounded-xl hover:bg-rich-black-15 hover:font-bold"
+                className="text-rich-black text-center font-medium px-4 mt-4 w-52 rounded-xl hover:bg-rich-black-15 hover:font-bold"
               >
                 <a
                   href={`/${item.text}`}
