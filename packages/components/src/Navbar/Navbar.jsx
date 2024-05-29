@@ -102,7 +102,7 @@ const Navbar = ({ navItems }) => {
     >
       {/* navbar desktop */}
       <div
-        className={` flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent`}
+        className={`flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -120,9 +120,9 @@ const Navbar = ({ navItems }) => {
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-off-white xl:border-white '} 
+                className={` {isSticky ? 'navElement lg:border-rich-black' : 'text-off-white xl:border-white '} 
               ${activeLink === item.text
-                    ? 'text-white font-bold xl:border-b-4 lg:pb-5 lg:h-[75px]'
+                    ? 'text-white font-bold lg:pb-5 lg:h-[75px] xl:border-b-4'
                     : ''
                   }`}
               >
@@ -167,7 +167,7 @@ const Navbar = ({ navItems }) => {
         {/* Mobile Navigation item */}
         <div
           className={`flex flex-col fixed items-center h-[300px] left-0 ${nav 
-            ? ' top-[68px] w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden '
+            ? 'top-[68px] w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden'
             : ' w-[100%] top-[-100%] ease-in-out duration-500 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : 'h-[300px]'} 
