@@ -1,7 +1,7 @@
 'use client';
 import * as bsIcon from 'react-icons/bs';
 
-export const Button = ({
+export const ButtonLarge = ({
   backgroundColor = "var(--primary-color)",
   backgroundColorHover = "var(--secondary-color)",
   borderColor = "var(--primary-color-10)",
@@ -16,7 +16,7 @@ export const Button = ({
   const IconComponent = dynamicIcon && bsIcon[dynamicIcon];
 
   return (
-    <a className={`custom-button font-bold flex gap-x-2 w-[203px] h-[48px] cursor-pointer leading-5 group justify-center items-center rounded-[10px] mx-auto`}>
+    <a className={`custom-button font-bold flex gap-x-2 w-[280px] h-[48px] cursor-pointer leading-5 group justify-center items-center rounded-[10px] mx-auto`}>
       {children}
       {IconComponent && <IconComponent />}
       
@@ -38,3 +38,4 @@ export const Button = ({
     </a>
   );
 };
+
