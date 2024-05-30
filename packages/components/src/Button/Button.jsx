@@ -4,8 +4,8 @@ import * as bsIcon from 'react-icons/bs';
 export const Button = ({
   backgroundColor = "var(--primary-color)",
   backgroundColorHover = "var(--secondary-color)",
-  fontColor = "var(--white)",
-  fontColorHover = "var(--white)",
+  fontColor = "var(--baby-powder)",
+  fontColorHover = "var(--baby-powder)",
   borderColor = "var(--primary-color-10)",
   borderColorHover = "var(--black)",
   dynamicIcon,
