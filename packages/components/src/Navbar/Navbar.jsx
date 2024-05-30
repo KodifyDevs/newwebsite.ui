@@ -98,11 +98,11 @@ const Navbar = ({ navItems }) => {
 
   return (
     <nav
-      className={`${isSticky ? 'sticky navBg z-10' : 'absolute'} w-full top-0 start-0 ease-out duration-500 `}
+      className={`${isSticky ? 'sticky navBg z-10' : 'absolute'} w-full top-0 start-0 ease-out duration-500`}
     >
       {/* navbar desktop */}
       <div
-        className={`flex flex-wrap max-w-[1553px] p-4 bg-white items-center justify-between lg:bg-transparent`}
+        className={`${nav ? '' : 'shadow-[0px_4px_15px_0px_var(--primary-color-10)]'} flex flex-wrap max-w-[1553px] mx-auto p-4 bg-white items-center justify-between lg:bg-transparent lg:shadow-none`}
       >
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -114,27 +114,26 @@ const Navbar = ({ navItems }) => {
           {navItems.map((item) => (
             <li
               key={item.id}
-              className={`${isSticky ? 'font-normal' : 'font-medium'}leading-5 lg:ml-4 `}
+              className={`${isSticky ? 'font-normal' : 'font-medium'} leading-5 lg:ml-4 `}
             >
               <a
                 href={`/${item.text}`}
                 data-name={item.text}
                 onClick={handleClick}
-                className={` {isSticky ? 'navElement lg:border-rich-black' : 'text-off-white xl:border-white '} 
+                className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-baby-powde-80 xl:border-baby-powder'}
               ${activeLink === item.text
-                    ? 'text-white font-bold lg:pb-5 lg:h-[75px] xl:border-b-4'
+                    ? 'text-baby-powder font-bold lg:pb-5 lg:h-[75px] xl:border-b-4'
                     : ''
                   }`}
               >
                 {item.text}
               </a>
-
             </li>
           ))}
 
           <div className="menu__languages flex relative leading-5 items-center text-rich-black ml-10 md:py-0 md:p-0 md:w-auto">
             <span
-              className={`${isSticky ? '' : 'text-off-white'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]
+              className={`${isSticky ? '' : 'text-baby-powde-80'} cursor-pointer flex px-3 content-center font-barlow items-center gap-x-[5px]
               `}
             >
 
@@ -142,7 +141,7 @@ const Navbar = ({ navItems }) => {
               {selectedLanguage} {/* Muestra el idioma seleccionado */}
             </span>
             <span className="BsFillCaretDownFill md:inline">
-              <BsFillCaretDownFill style={{color: isSticky ? '' : 'var(--white)'}}  />
+              <BsFillCaretDownFill style={{color: isSticky ? '' : 'var(--baby-powder)'}}  />
             </span>
 
             {/* Desktop Lenguaje */}
@@ -166,16 +165,16 @@ const Navbar = ({ navItems }) => {
 
         {/* Mobile Navigation item */}
         <div
-          className={`flex flex-col fixed items-center h-[300px] left-0 ${nav 
-            ? 'top-[68px] w-[100%] bg-white ease-in-out duration-500 -z-10 lg:hidden'
+          className={`flex flex-col fixed items-center h-[300px] left-0 px-4 ${nav 
+            ? 'top-[68px] w-[100%] bg-white ease-in-out duration-500 shadow-[0px_4px_15px_0px_var(--primary-color-10)] -z-10 lg:hidden'
             : ' w-[100%] top-[-100%] ease-in-out duration-500 z-10'
             } 
         ${isSecondOpen ? 'h-[410px]' : 'h-[300px]'} 
         `}
         >
           <ul
-            className={`flex px-[116px] pb-6 pt-2 flex-col items-center fixed left-auto right-auto w-10/12 ${nav
-              ? 'rounded-xl top-[68px] h-[280px] bg-winchester-gray ease-in-out duration-500 lg:hidden'
+            className={`flex relative flex-col items-center w-full pb-6 pt-2 left-auto right-auto ${nav
+              ? 'rounded-xl h-[280px] bg-winchester-gray ease-in-out duration-500 lg:hidden'
               : 'h-[280px] top-[-100%] ease-in-out duration-500'
               }
           ${isSecondOpen ? 'h-[358px]' : ''} 

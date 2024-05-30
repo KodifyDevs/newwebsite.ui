@@ -12,8 +12,8 @@ const config = {
         'dark-cyan': 'var(--green)',
         'winchester-gray': 'var(--winchester-gray)',
         'dark-cyan-10': 'var(--green-10)',
-        'white': 'var(--white)',
-        'off-white': 'var(--white-80)',
+        'baby-powder': 'var(--baby-powder)',
+        'baby-powde-80': 'var(--baby-powder-80)',
         'black': 'var(--black)'
       },
       dropShadow: {

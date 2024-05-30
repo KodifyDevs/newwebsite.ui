@@ -27,8 +27,7 @@ export const Hero = () => {
                   <div className="hidden ml-5 md:block">
                     <Button 
                     backgroundColor="var(--green)"
-                    backgroundColorHover="var(--white)"
-                    fontColor="var(--white)"
+                    backgroundColorHover="var(--baby-powder)"
                     fontColorHover="var(--green)"
                     borderColor="var(--green)"
                     borderColorHover="var(--green)"
