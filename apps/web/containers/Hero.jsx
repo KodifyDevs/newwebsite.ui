@@ -5,10 +5,10 @@ export const Hero = () => {
     return (
         <section>
           <div className="w-full bg-very-light-gray">
-            <div className="max-w-[1553px] lg:h-[580px] xl:flex xl:mx-auto">
-              <div className="w-fit mx-auto lg:mt-[140px]">
-                <div className="px-4 pt-6 text-left xl:w-[537px]">
-                  <h1 className="text-title-clamp font-bold text-rich-black leading-leading-title xl:leading-leading-title-desk">
+            <div className="max-w-[1553px] lg:h-[580px] lg:flex lg:mx-auto">
+              <div className="w-fit mx-auto lg:my-auto">
+                <div className="px-4 pt-6 text-left lg:w-[537px]">
+                  <h1 className="text-title-clamp font-bold text-rich-black leading-leading-title lg:leading-leading-title-desk">
                     Crece junto a nosotros
                   </h1>
                   <h2 className="mt-4 font-semibold text-2xl leading-leading-7 text-rich-black md:text-3xl md:leading-10 lg:text-3xl ">y alcanza el éxito que te mereces</h2>
@@ -44,11 +44,13 @@ export const Hero = () => {
     
               </div>
     
-              <div className="hidden relative h-fit top-[-276px] right-[-5px] xl:block">
+              <div className="hidden relative h-fit top-[-276px] overflow-hidden lg:block">
                 <Image
+                className="relative right-[-9px]"
                 src="/Kodify_ilustration.png"
                 width={700}
                 height={843.24}
+                priority={true}
                 alt="Kodify Ilustration"
                 />
               </div>
