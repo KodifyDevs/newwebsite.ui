@@ -1,4 +1,4 @@
-import { Button, ButtonSmall } from "@packages/components/src/Button";
+import { Button } from "@packages/components/src/Button";
 import Image from "next/image";
 
 export const Hero = () => {
@@ -18,22 +18,23 @@ export const Hero = () => {
                   Permítete dar el salto a la era digital de la mano de un equipo altamente capacitado y con experiencia. <br /> ¡Kodify, del código al éxito!
                 </p>
               </div>
-              <div className="flex mt-12 justify-center lg:justify-normal">
+              <div className="flex mt-12 justify-center md:gap-x-5 lg:justify-normal">
                 <div className="mb-12 lg:mb-0">
-                  <Button >
-                    Descúbrenos
+                  <Button size="medium">
+                  Descúbrenos
                   </Button>
                 </div>
-                <div className="hidden ml-5 md:block">
+                <div className="hidden md:block">
                   <Button
                     backgroundColor="var(--green)"
                     backgroundColorHover="var(--baby-powder)"
-                    fontColorHover="var(--green)"
                     borderColor="var(--green)"
                     borderColorHover="var(--green)"
-                    dynamicIcon="BsWhatsapp"
                     dropShadow="0px 4px 15px 0px var(--green-10)"
                     dropShadowHover="0px 4px 15px 0px var(--green-10)"
+                    dynamicIcon="BsWhatsapp"
+                    fontColorHover="var(--green)"
+                    size="whatsappBtn"
                   >
                     Consulta
                   </Button>
@@ -45,24 +46,26 @@ export const Hero = () => {
 
           <div className="hidden relative h-fit top-[-276px] overflow-hidden lg:block">
             <Image
+              alt="Kodify Ilustration"
               className="relative right-[-9px]"
-              src="/Kodify_ilustration.png"
-              width={700}
               height={843.24}
               priority={true}
-              alt="Kodify Ilustration"
+              src="/Kodify_ilustration.png"
+              width={700}
             />
           </div>
         </div>
 
         <div className="fixed block top-[702px] right-[16px] md:hidden">
-          <ButtonSmall
+          <Button
             backgroundColor="var(--green)"
             backgroundColorHover="var(--baby-powder)"
-            fontColorHover="var(--green)"
+            borderRadius="100%"
             dynamicIcon="BsWhatsapp"
+            fontColorHover="var(--green)"
+            size="small"
           >
-          </ButtonSmall>
+          </Button>
         </div>
       </div>
     </section>

@@ -5,18 +5,36 @@ export const Button = ({
   backgroundColor = "var(--primary-color)",
   backgroundColorHover = "var(--secondary-color)",
   borderColor = "var(--primary-color-10)",
-  borderColorHover = "var(--black)",
+  borderColorHover = "var(--black-05)",
+  borderRadius = "10px",
   dropShadow = '0px 4px 15px 0px var(--rich-black-10)',
-  dropShadowHover = '0px 4px 15px 0px var(--black)',
+  dropShadowHover = '0px 4px 15px 0px var(--black-05)',
   dynamicIcon,
   fontColor = "var(--baby-powder)",
   fontColorHover = "var(--baby-powder)",
+  size = 'medium',
   children,
 }) => {
   const IconComponent = dynamicIcon && bsIcon[dynamicIcon];
-
+  const sizeVariants = {
+    small: {
+      padding: '15px 15px',
+    },
+    medium: {
+      padding: '15px 55px', 
+    },
+    large: {
+      padding: '13px 77px', 
+    },
+    whatsappBtn: {
+      padding: '15px 53px 15px 63px', 
+    },
+    whatsappBtnLarge:{
+      padding: '15px 90px'
+    }
+  };
   return (
-    <a className={`custom-button font-bold flex gap-x-2 w-[203px] h-[48px] cursor-pointer leading-5 group justify-center items-center rounded-[10px] mx-auto`}>
+    <a className={`custom-button font-bold flex gap-x-2 cursor-pointer leading-5 group justify-center items-center mx-auto`}>
       {children}
       {IconComponent && <IconComponent />}
       
@@ -24,9 +42,11 @@ export const Button = ({
       <style jsx>{`
         .custom-button {
           background: ${backgroundColor};
+          border-radius: ${borderRadius};
           border:1px solid ${borderColor};
           box-shadow: ${dropShadow};
           color: ${fontColor};
+          padding: ${sizeVariants[size].padding}
         }
         .custom-button:hover {
           background: ${backgroundColorHover};
