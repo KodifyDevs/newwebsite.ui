@@ -122,7 +122,7 @@ const Navbar = ({ navItems }) => {
                 onClick={handleClick}
                 className={` ${isSticky ? 'navElement lg:border-rich-black' : 'text-baby-powde-80 xl:border-baby-powder'}
               ${activeLink === item.text
-                    ? 'text-baby-powder font-bold lg:pb-5 lg:h-[75px] xl:border-b-4'
+                    ? 'text-baby-powder font-bold lg:pb-[23px] lg:h-[75px] lg:border-b-4'
                     : ''
                   }`}
               >
