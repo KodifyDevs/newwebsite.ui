@@ -1,7 +1,7 @@
 'use client';
 import * as bsIcon from 'react-icons/bs';
 
-export const Button = ({
+const Button = ({
   backgroundColor = "var(--primary-color)",
   backgroundColorHover = "var(--secondary-color)",
   borderColor = "var(--primary-color-10)",
@@ -58,3 +58,5 @@ export const Button = ({
     </a>
   );
 };
+
+export default Button;
