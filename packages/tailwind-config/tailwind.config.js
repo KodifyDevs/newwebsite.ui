@@ -14,13 +14,7 @@ const config = {
         'dark-cyan-10': 'var(--green-10)',
         'baby-powder': 'var(--baby-powder)',
         'baby-powde-80': 'var(--baby-powder-80)',
-        'black': 'var(--black)'
-      },
-      dropShadow: {
-        'button-default': `0px 4px 15px 0px var(--rich-black-10)`,
-        'button-hover-default': `0px 4px 15px 0px var(--black)`,
-        'dark-cyan-dropshadow': `0px 4px 15px 0px var(--green-10)`,
-
+        'black-10': 'var(--black-05)'
       },
       fontFamily: {
         'barlow': ['Barlow', 'sans-serif'],
