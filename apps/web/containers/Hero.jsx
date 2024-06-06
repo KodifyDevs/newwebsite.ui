@@ -57,7 +57,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="fixed block top-[702px] right-[16px] md:hidden">
+          <div className="fixed z-10 block top-[90%] right-[16px] md:hidden">
             <Button
               backgroundColor="var(--green)"
               backgroundColorHover="var(--baby-powder)"
