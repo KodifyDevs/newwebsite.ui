@@ -20,8 +20,9 @@ const Card = ({
                <div className="flex flex-wrap gap-y-6 gap-x-[75px] justify-center my-6 mx-auto">
                   {cardData.map((data) => (
                      // Card front
-                     <article key={data.id} className="group [perspective:1000px]">
-                        <section className="card__front relative px-[63px] py-[99px] transition-all duration-500 lg:[transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)]">
+                     <section key={data.id} className="group [perspective:1000px]">
+                        <div className="card__front relative px-[63px] py-[99px] w-[315px] lg:transition-all lg:duration-500 lg:delay-500 lg:group-hover:delay-0 lg:[transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)]">
+
                            <div className="relative inset-0">
                               <img className="mx-auto w-[50[x] h-[50px]" src={data.img.flip} alt={data.imgAlt.flip} />
                               <div className="w-[195px] h-[76px] text-center mt-3">
@@ -30,16 +31,20 @@ const Card = ({
                                  </h2>
                               </div>
                            </div>
+
                            {/* card back */}
-                           <section className="card__back absolute inset-0 px-[17px] py-[75px] text-center [backface-visibility:visible] lg:[transform:rotateY(180deg)] lg:[backface-visibility:hidden]">
+                           <div className="card__back absolute inset-0 px-[17px] py-[75px] w-[315px] text-center [backface-visibility:visible] lg:[transform:rotateY(180deg)] lg:[backface-visibility:hidden]">
+
                               <div className="flex flex-col items-center justify-center">
                                  <img className="mx-auto w-[50[x] h-[50px]" src={data.img.base} alt={data.imgAlt.base} />
                                  <h2 className="text-xl font-bold">{data.title}</h2>
                                  <p className="text-base leading-[19.2px] mt-[26px]">{data.description}</p>
                               </div>
-                           </section>
-                        </section>
-                     </article>
+
+                           </div>
+                           
+                        </div>
+                     </section>
                   ))}
                </div>
                <div className="w-fit mx-auto">
@@ -58,11 +63,6 @@ const Card = ({
             border-radius: ${radius};
             box-shadow: ${frontDropShadow};
             color: ${frontFontColor};
-            width: 315px;
-         }
-            
-         .group:not(:hover) .card__front {
-         transition-delay: 500ms;
          }
 
          .card__back {
@@ -70,8 +70,7 @@ const Card = ({
             border-radius: ${radius};
             box-shadow: ${backdropShadow};
             color: ${backfontColor};
-            width: 315px;
-         }      
+            }      
          `}
          </style>
       </div>
