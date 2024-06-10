@@ -63,6 +63,7 @@ export const Hero = () => {
               backgroundColorHover="var(--baby-powder)"
               borderRadius="100%"
               dynamicIcon="BsWhatsapp"
+              iconSize="24"
               fontColorHover="var(--green)"
               size="small"
             >
