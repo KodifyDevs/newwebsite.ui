@@ -48,7 +48,7 @@ export const Hero = () => {
             <div className="hidden relative h-fit top-[-276px] overflow-hidden lg:block 2xl:overflow-visible">
               <Image
                 alt="Kodify Ilustration"
-                className="relative right-[-9px]"
+                className="relative right-[-9px] 2xl:right-0"
                 height={843.24}
                 priority={true}
                 src="/Kodify_ilustration.png"
