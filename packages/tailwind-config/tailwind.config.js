@@ -14,7 +14,8 @@ const config = {
         'dark-cyan-10': 'var(--green-10)',
         'baby-powder': 'var(--baby-powder)',
         'baby-powde-80': 'var(--baby-powder-80)',
-        'black-10': 'var(--black-05)'
+        'black-05': 'var(--black-05)',
+        'cultured': 'var(--cultured)'
       },
       fontFamily: {
         'barlow': ['Barlow', 'sans-serif'],

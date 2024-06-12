@@ -104,7 +104,7 @@ const Navbar = ({ navItems }) => {
         {/* navbar desktop */}
         <Container>
           <div
-            className={`${nav ? '' : 'shadow-[0px_4px_15px_0px_var(--primary-color-10)]'} flex flex-wrap p-4 bg-white items-center justify-between lg:bg-transparent lg:shadow-none`}
+            className={`${nav ? '' : 'shadow-[0px_4px_15px_0px_var(--primary-color-10)]'} flex flex-wrap px-4 py-[17px] bg-white items-center justify-between lg:bg-transparent lg:shadow-none`}
           >
             {/* Logo */}
             <a href="#" className="flex items-center">
