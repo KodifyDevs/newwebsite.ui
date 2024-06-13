@@ -21,6 +21,7 @@ const config = {
         'white-90': 'var(--white-90)',
         'black-15': 'var(--black-15)',
         'black-20': 'var(--black-20)',
+        'cultured': 'var(--cultured)'
       },
       fontFamily: {
         'barlow': ['Barlow', 'sans-serif'],

@@ -10,15 +10,17 @@ const Button = ({
   dropShadow = '0px 4px 15px 0px var(--rich-black-10)',
   dropShadowHover = '0px 4px 15px 0px var(--black-05)',
   dynamicIcon,
+  iconSize = '14px',
   fontColor = "var(--baby-powder)",
   fontColorHover = "var(--baby-powder)",
   size = 'medium',
   children,
 }) => {
   const IconComponent = dynamicIcon && bsIcon[dynamicIcon];
+
   const sizeVariants = {
     small: {
-      padding: '15px 15px',
+      padding: '13px 13px',
     },
     medium: {
       padding: '15px 55px', 
@@ -36,7 +38,7 @@ const Button = ({
   return (
     <a className={`custom-button font-bold flex gap-x-2 cursor-pointer leading-5 group justify-center items-center mx-auto`}>
       {children}
-      {IconComponent && <IconComponent />}
+      {IconComponent && <IconComponent size={iconSize} />}
       
       {/* Custom button styles */}
       <style jsx>{`
