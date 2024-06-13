@@ -1,7 +1,7 @@
 import { Button, Container } from "@packages/components";
 import Image from "next/image";
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <section>
       <div className="w-full bg-very-light-gray">
@@ -73,3 +73,5 @@ export const Hero = () => {
     </section>
   );
 }
+
+export default Hero;
