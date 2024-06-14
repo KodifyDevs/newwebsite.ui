@@ -11,7 +11,7 @@ export default async function Page() {
     <>
       <Hero />
       <HowWeAre />
-    <Card cardData={CardData} />
+      <Card cardData={CardData} />
     </>
   );
 }
