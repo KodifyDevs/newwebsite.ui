@@ -1,2 +1,2 @@
-export {default as Hero} from './src/Hero'
-export {default as Services} from './src/ServicePackages'
+export {default as Hero} from './Hero'
+export {default as Services} from './ServicePackages'
