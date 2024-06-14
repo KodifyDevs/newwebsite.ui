@@ -45,10 +45,10 @@ export const Hero = () => {
 
             </div>
 
-            <div className="hidden relative h-fit top-[-276px] lg:block">
+            <div className="hidden relative h-fit top-[-276px] overflow-hidden lg:block 2xl:overflow-visible">
               <Image
                 alt="Kodify Ilustration"
-                className="relative right-[-9px]"
+                className="relative right-[-9px] 2xl:right-0"
                 height={843.24}
                 priority={true}
                 src="/Kodify_ilustration.png"
@@ -57,12 +57,13 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="fixed block top-[702px] right-[16px] md:hidden">
+          <div className="fixed z-10 block top-[90%] right-[16px] md:hidden">
             <Button
               backgroundColor="var(--green)"
               backgroundColorHover="var(--baby-powder)"
               borderRadius="100%"
               dynamicIcon="BsWhatsapp"
+              iconSize="24"
               fontColorHover="var(--green)"
               size="small"
             >
