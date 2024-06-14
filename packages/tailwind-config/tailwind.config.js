@@ -21,6 +21,7 @@ const config = {
         'white-90': 'var(--white-90)',
         'black-15': 'var(--black-15)',
         'black-20': 'var(--black-20)',
+        'black-25': 'var(--black-25)',
         'cultured': 'var(--cultured)'
       },
       fontFamily: {
