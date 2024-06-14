@@ -9,7 +9,7 @@ const Services = ({
             <h2 className="text-center font-bold text-3xl leading-leading-title text-black">Empezá ya</h2>
             <div className="flex my-6 mx-auto overflow-auto touch-pan-x">
             
-                <div className="flex relative w-full md:justify-center xl:gap-x-[75px]">
+                <div className="flex relative w-full md:justify-center lg:gap-x-[75px]">
                     <section className="relative font-medium text-[14px] ml-4 leading-4 bg-rich-black rounded-[10px] p-[37px_27.5px_25px_27.5px] shadow-[0px_4px_15px_0px_var(--black-05)] xl:ml-0">
                         
                         <span className="absolute bg-caquelicot text-white top-[0px] left-[0px] p-[2px_30px_2px_21px] rounded-[10px_0px_10px_0px]">Lo más cotizado</span>
