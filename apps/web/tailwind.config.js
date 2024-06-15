@@ -6,7 +6,7 @@ const config = {
   content: [
     './**/*.{jsx,tsx}',
     '../../packages/components/**/*.{jsx,tsx}',
-    './containers/src/**/*.jsx'
+    './containers/**/*.jsx'
   ],
   presets: [sharedConfig],
 };
