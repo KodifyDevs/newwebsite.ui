@@ -40,6 +40,19 @@ const Hero = () => {
                       Consulta
                     </Button>
                   </div>
+
+                  <div className="fixed z-10 block bottom-12 right-[22px] md:hidden">
+                    <Button
+                      backgroundColor="var(--green)"
+                      backgroundColorHover="var(--baby-powder)"
+                      borderRadius="100%"
+                      dynamicIcon="BsWhatsapp"
+                      iconSize="24"
+                      fontColorHover="var(--green)"
+                      size="small"
+                    >
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -55,19 +68,6 @@ const Hero = () => {
                 width={700}
               />
             </div>
-          </div>
-
-          <div className="fixed z-10 block top-[90%] right-[16px] md:hidden">
-            <Button
-              backgroundColor="var(--green)"
-              backgroundColorHover="var(--baby-powder)"
-              borderRadius="100%"
-              dynamicIcon="BsWhatsapp"
-              iconSize="24"
-              fontColorHover="var(--green)"
-              size="small"
-            >
-            </Button>
           </div>
         </Container>
       </div>
