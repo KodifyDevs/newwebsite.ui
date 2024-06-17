@@ -54,7 +54,7 @@ const Services = ({
                         </div>
                     </section>
 
-                    <section className="font-medium relative text-[14px] leading-4 bg-baby-powder ml-4 rounded-[10px] lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] xl:hover:slgdow-[0px_4px_15px_0px_var(--primary-color-25)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
+                    <section className="font-medium relative text-[14px] leading-4 bg-baby-powder ml-4 rounded-[10px] lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] lg:hover:shadow-[0px_4px_15px_0px_var(--primary-color-25)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
 
                             <h2 className="font-bold text-2xl leading-leading-title text-rich-black">Página Web</h2>
                             <h3 className="font-normal text-[14px] leading-5 text-rich-black">Desarrollo Completo</h3>
@@ -89,7 +89,7 @@ const Services = ({
                         </div>
                     </section>
 
-                    <section className="font-medium relative text-[14px] leading-4 ml-4 rounded-[10px] bg-baby-powder lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] xl:hover:slgdow-[0px_4px_15px_0px_var(--primary-color-25)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
+                    <section className="font-medium relative text-[14px] leading-4 ml-4 rounded-[10px] bg-baby-powder lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] lg:hover:shadow-[0px_4px_15px_0px_var(--primary-color-25)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
 
                             <h2 className="font-bold text-2xl leading-leading-title text-rich-black">Página Web</h2>
                             <h3 className="font-normal text-[14px] leading-5 text-rich-black">Desarrollo Completo</h3>
