@@ -2,7 +2,7 @@
 const config = {
   theme: {
     extend: {
-      colors:{
+      colors: {
         'rich-black': 'var(--primary-color)',
         'rich-black-10': 'var(--primary-color-10)',
         'rich-black-15': 'var(--primary-color-15)',
@@ -32,7 +32,7 @@ const config = {
       },
       fontSize: {
         'title-clamp': 'clamp(30px, calc(30px + (64 - 30) * ((100vw - 319px) / (1535 - 319))), 64px)',
-        'paragraph-clamp': 'clamp(16px, calc(16px + (18 - 16) * ((100vw - 319px) / (1535 - 319))), 18px)', 
+        'paragraph-clamp': 'clamp(16px, calc(16px + (18 - 16) * ((100vw - 319px) / (1535 - 319))), 18px)',
         sm: '0.8rem',
         base: '1rem',
         xl: '1.25rem',
@@ -53,6 +53,19 @@ const config = {
     },
 
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar": {
+          "display": "none"
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        }
+      }
+      addUtilities(newUtilities);
+    },
+  ],
 };
 export default config;
