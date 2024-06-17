@@ -4,9 +4,11 @@
   --primary-color: #091928;
   --primary-color-10: #0919281A;
   --primary-color-15: #09192826;
+  --primary-color-25: #0a1a2940;
   --primary-color-70: #091928B2;
   --primary-color-80: #091928CC;
   --secondary-color: #F15025;
+  --secondary-color-15: #F1502526;
   --black-15: #00000026;
   --black-20: #00000033;
   --black-25: #00000040;
@@ -141,3 +143,4 @@ body {
 .menu__languages .submenu__Languages .BsFillCaretDownFill {
   transition-delay: 600ms;
 }
+

@@ -7,10 +7,10 @@ const Services = ({
         <div className="w-full bg-very-light-gray pt-12">
             <Container>
             <h2 className="text-center font-bold text-3xl leading-leading-title text-black">Empezá ya</h2>
-            <div className="flex my-6 mx-auto overflow-auto touch-pan-x">
+            <div className="flex py-6 mx-auto overflow-auto no-scrollbar touch-pan-x lg:overflow-visible">
             
-                <div className="flex relative w-full md:justify-center lg:gap-x-[75px]">
-                    <section className="relative font-medium text-[14px] ml-4 leading-4 bg-rich-black rounded-[10px] p-[37px_27.5px_25px_27.5px] shadow-[0px_4px_15px_0px_var(--black-15)] xl:ml-0">
+                <div className="flex relative w-full md:justify-center xl:gap-x-[75px]">
+                    <section className="relative font-medium text-[14px] ml-4 leading-4 bg-rich-black rounded-[10px] p-[37px_27.5px_25px_27.5px] lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] lg:hover:shadow-[0px_4px_15px_0px_var(--primary-color-25)] xl:ml-0">
                         
                         <span className="absolute bg-caquelicot text-white top-[0px] left-[0px] p-[2px_30px_2px_21px] rounded-[10px_0px_10px_0px]">Lo más cotizado</span>
                         
@@ -54,7 +54,7 @@ const Services = ({
                         </div>
                     </section>
 
-                    <section className="font-medium relative text-[14px] leading-4 bg-baby-powder ml-4 rounded-[10px] shadow-[0px_4px_15px_0px_var(--black-15)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
+                    <section className="font-medium relative text-[14px] leading-4 bg-baby-powder ml-4 rounded-[10px] lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] xl:hover:slgdow-[0px_4px_15px_0px_var(--primary-color-25)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
 
                             <h2 className="font-bold text-2xl leading-leading-title text-rich-black">Página Web</h2>
                             <h3 className="font-normal text-[14px] leading-5 text-rich-black">Desarrollo Completo</h3>
@@ -89,7 +89,7 @@ const Services = ({
                         </div>
                     </section>
 
-                    <section className="font-medium relative text-[14px] leading-4 ml-4 rounded-[10px] bg-baby-powder shadow-[0px_4px_15px_0px_var(--black-15)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
+                    <section className="font-medium relative text-[14px] leading-4 ml-4 rounded-[10px] bg-baby-powder lg:shadow-[0px_4px_15px_0px_var(--primary-color-10)] xl:hover:slgdow-[0px_4px_15px_0px_var(--primary-color-25)] p-[37px_27.5px_25px_27.5px] xl:ml-0">
 
                             <h2 className="font-bold text-2xl leading-leading-title text-rich-black">Página Web</h2>
                             <h3 className="font-normal text-[14px] leading-5 text-rich-black">Desarrollo Completo</h3>
