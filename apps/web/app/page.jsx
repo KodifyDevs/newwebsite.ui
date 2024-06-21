@@ -5,6 +5,7 @@ import { cardData, servicesData } from "../constants";
 export const metadata = {
   title: 'Kodify',
 }
+
 export default async function Page() {
   return (
     <>
