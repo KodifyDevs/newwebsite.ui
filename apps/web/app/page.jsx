@@ -1,5 +1,5 @@
 import { Card } from "@packages/components";
-import { Hero } from "../containers/Hero";
+import { WhoWeAre, Hero} from "../containers";
 import { CardData } from "../constants/cardData";
  
 export const metadata = {
@@ -8,9 +8,9 @@ export const metadata = {
 export default async function Page() {
   return (
     <>
-    <Hero />
-    <Card cardData={CardData} />
+      <Hero />
+      <WhoWeAre />
+      <Card cardData={CardData} />
     </>
-
   );
 }
