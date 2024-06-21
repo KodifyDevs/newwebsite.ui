@@ -56,13 +56,14 @@ const config = {
   plugins: [
     function ({ addUtilities }) {
       const newUtilities = {
-        ".no-scrollbar::-webkit-scrollbar": {
-          "display": "none"
-        },
         ".no-scrollbar": {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
+        },
+        "&::-webkit-scrollbar": {
+          "display": "none"
         }
+        
       }
       addUtilities(newUtilities);
     },
