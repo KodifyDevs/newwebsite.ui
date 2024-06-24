@@ -1,4 +1,4 @@
-export const CardData = [
+const CardData = [
     {
         id: 1,
         title: "Desarrollo y diseño web",
@@ -79,3 +79,5 @@ export const CardData = [
     },
 
 ]
+
+export default CardData;

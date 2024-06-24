@@ -1,8 +1,7 @@
-import React from "react";
 import { Button, Container } from "@packages/components";
 import Image from "next/image";
 
-function Hero() {
+const Hero = () => {
   return (
     <section>
       <div className="w-full bg-very-light-gray">
@@ -41,6 +40,20 @@ function Hero() {
                       Consulta
                     </Button>
                   </div>
+    
+                  <div className="fixed z-10 block bottom-12 right-[22px] md:hidden">
+                    <Button
+                      backgroundColor="var(--green)"
+                      backgroundColorHover="var(--baby-powder)"
+                      borderRadius="100%"
+                      dynamicIcon="BsWhatsapp"
+                      iconSize="24"
+                      fontColorHover="var(--green)"
+                      size="small"
+                    >
+                    </Button>
+                  </div>
+    
                 </div>
               </div>
 
@@ -58,18 +71,6 @@ function Hero() {
             </div>
           </div>
 
-          <div className="fixed z-10 block top-[90%] right-[16px] md:hidden">
-            <Button
-              backgroundColor="var(--green)"
-              backgroundColorHover="var(--baby-powder)"
-              borderRadius="100%"
-              dynamicIcon="BsWhatsapp"
-              iconSize="24"
-              fontColorHover="var(--green)"
-              size="small"
-            >
-            </Button>
-          </div>
         </Container>
       </div>
     </section>
