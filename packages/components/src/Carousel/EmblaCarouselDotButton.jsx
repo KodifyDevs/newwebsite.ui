@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
-export const useDotButton = (emblaApi) => {
+const useDotButton = (emblaApi) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState([])
 
@@ -44,3 +44,5 @@ export const DotButton = (props) => {
     </button>
   )
 }
+
+export default useDotButton;
