@@ -9,19 +9,20 @@ const Carousel  = ({
     data,
     showDotsIndicators = false,
     showArrowsIndicators = false,
-    breakpoint = 'all',
+    breakpoint,
 }) => {
 
     const breakpoints = {
-        mobile: '(min-width: 768px)',
-        desktop: '(min-width: 1280px)',
-        universal: 'all',
-    };
-
-    const [emblaRef, emblaApi] = useEmblaCarousel({
+        md: '768px',
+        lg: '1024px',
+      };
+    
+      const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
-        breakpoints: { [breakpoints[breakpoint]]: { active: false } },
-    });
+        breakpoints: {
+          [`(min-width: ${breakpoints[breakpoint]})`]: { active: false },
+        },
+      });
 
     console.log({emblaRef, emblaApi});
 
@@ -46,7 +47,7 @@ const Carousel  = ({
             </section>
             {/* indicador visual */}
             {showDotsIndicators && (
-                <div className="flex justify-center space-x-[6px] mt-6 hiddenIndicators">
+                <div className={`flex justify-center space-x-[6px] mt-6 ${breakpoint}:hidden`}>
                     {Array.from({ length: data.length }).map((_, index) => (
                         <div
                             key={index}
@@ -55,17 +56,6 @@ const Carousel  = ({
                             }`}
                         ></div>
                     ))}
-                    <style jsx>
-                        {
-                            `
-                           @media screen and ${breakpoints[breakpoint]} {
-                            .hiddenIndicators {
-                            display: none;
-                            }
-                        }
-                            `
-                        }
-                    </style>
                 </div>
             )}
             
