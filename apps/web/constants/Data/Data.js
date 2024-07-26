@@ -1,4 +1,13 @@
-const CardData = [
+export const navItems = [
+    { id: 1, text: 'Inicio' },
+    { id: 2, text: 'Nosotros' },
+    { id: 3, text: 'Servicios' },
+    { id: 4, text: 'Proyectos' },
+    { id: 5, text: 'Blog' }
+];
+  
+
+export const CardData = [
     {
         id: 1,
         title: "Desarrollo y diseño web",
@@ -80,4 +89,31 @@ const CardData = [
 
 ]
 
-export default CardData;
+export const servicesData = [
+    { id: 1, text: 'Asesoría de negocio' },
+    { id: 2, text: 'Diseño UI/UX' },
+    { id: 3, text: 'Optimización del SEO', },
+    { id: 4, text: 'Framework'}
+      
+];
+
+export const ourWorkData = [
+    {
+        id: 1,
+        title: "Proyecto",
+        img: '/Projects.png',
+        imgDesk: '/Projects_2.png',
+        imgAlt: 'Projects',
+        description: "Lorem ipsum dolor sit amet consectetur. Massa dictum vulputate suspendisse congue. Pellentesque sit neque a morbi vitae urna tincidunt congue.",
+
+    },
+    {
+        id: 2,
+        title: "Proyecto",
+        img: '/Projects.png',
+        imgDesk: '/Projects_2.png',
+        imgAlt: 'Projects',
+        description: "Lorem ipsum dolor sit amet consectetur. Massa dictum vulputate suspendisse congue. Pellentesque sit neque a morbi vitae urna tincidunt congue.",
+
+    }
+]

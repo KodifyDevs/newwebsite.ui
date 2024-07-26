@@ -24,8 +24,6 @@ const Carousel  = ({
         },
       });
 
-    console.log({emblaRef, emblaApi});
-
     useEffect(() => {
         if (emblaApi) {
             console.log(emblaApi.slideNodes())

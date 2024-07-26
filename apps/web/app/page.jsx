@@ -1,6 +1,6 @@
 import { Card } from "@packages/components";
 import { Hero, WhoWeAre, Services, OurWork } from "../containers";
-import { cardData, ourWorkData, servicesData } from "../constants";
+import {CardData, ourWorkData, servicesData } from "../constants";
  
 export const metadata = {
   title: 'Kodify',
@@ -11,7 +11,7 @@ export default async function Page() {
     <>
     <Hero />
     <WhoWeAre />
-    <Card cardData={cardData} />
+    <Card cardData={CardData} />
     <Services packagesData={servicesData}/>
     <OurWork ourWorkData={ourWorkData}/>
     </>
