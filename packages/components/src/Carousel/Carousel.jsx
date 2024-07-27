@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import useDotButton from './EmblaCarouselDotButton';
 import { NextButton, PrevButton, usePrevNextButtons } from './EmblaCarouselArrowButtons.jsx';
 
-const Carousel  = ({
+const Carousel = ({
     children,
     data,
     showDotsIndicators = false,
@@ -15,20 +15,14 @@ const Carousel  = ({
     const breakpoints = {
         md: '768px',
         lg: '1024px',
-      };
-    
-      const [emblaRef, emblaApi] = useEmblaCarousel({
+    };
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         breakpoints: {
-          [`(min-width: ${breakpoints[breakpoint]})`]: { active: false },
+            [`(min-width: ${breakpoints[breakpoint]})`]: { active: false },
         },
-      });
-
-    useEffect(() => {
-        if (emblaApi) {
-            console.log(emblaApi.slideNodes())
-        }
-    }, [emblaApi])
+    });
 
     const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi)
 
@@ -51,12 +45,12 @@ const Carousel  = ({
                             key={index}
                             onClick={() => onDotButtonClick(index)}
                             className={`h-1 w-[26px] rounded-[10px] ${index === selectedIndex ? 'bg-rich-black' : 'bg-black-20'
-                            }`}
+                                }`}
                         ></div>
                     ))}
                 </div>
             )}
-            
+
             {showArrowsIndicators && (
                 <div className="embla__buttons">
                     <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
@@ -68,4 +62,4 @@ const Carousel  = ({
     );
 }
 
-export default Carousel ;
+export default Carousel;
