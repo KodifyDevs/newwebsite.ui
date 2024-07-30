@@ -5,7 +5,7 @@ export const navItems = [
     { id: 4, text: 'Proyectos' },
     { id: 5, text: 'Blog' }
 ];
-  
+
 
 export const CardData = [
     {
@@ -16,7 +16,7 @@ export const CardData = [
             base: 'Gif/system-solid-34-code-base.gif',
             flip: 'Gif/system-solid-34-code-flip.gif'
         },
-        imgAlt:{
+        imgAlt: {
             base: 'Gif-system-solid-34-code-base',
             flip: 'Gif-system-solid-34-code-flip'
         }
@@ -29,7 +29,7 @@ export const CardData = [
             base: 'Gif/system-solid-157-swipe-base.gif',
             flip: 'Gif/system-solid-157-swipe-flip.gif'
         },
-        imgAlt:{
+        imgAlt: {
             base: 'Gif-system-solid-157-swipe-base',
             flip: 'Gif-system-solid-157-swipe-flip'
         }
@@ -42,7 +42,7 @@ export const CardData = [
             base: 'Gif/system-solid-31-check-base.gif',
             flip: 'Gif/system-solid-31-check-flip.gif'
         },
-        imgAlt:{
+        imgAlt: {
             base: 'Gif-system-solid-31-check-base',
             flip: 'Gif-system-solid-31-check-flip'
         }
@@ -55,7 +55,7 @@ export const CardData = [
             base: 'Gif/system-solid-6-shopping-base.gif',
             flip: 'Gif/system-solid-6-shopping-flip.gif'
         },
-        imgAlt:{
+        imgAlt: {
             base: 'Gif-system-solid-6-shopping-base',
             flip: 'Gif-system-solid-6-shopping-flip'
         }
@@ -68,7 +68,7 @@ export const CardData = [
             base: 'Gif/system-solid-10-analytics-base.gif',
             flip: 'Gif/system-solid-10-analytics-flip.gif'
         },
-        imgAlt:{
+        imgAlt: {
             base: 'Gif-system-solid-10-analytics-base',
             flip: 'Gif-system-solid-10-analytics-flip'
         }
@@ -81,7 +81,7 @@ export const CardData = [
             base: 'Gif/system-solid-26-play-base.gif',
             flip: 'Gif/system-solid-26-play-flip.gif'
         },
-        imgAlt:{
+        imgAlt: {
             base: 'Gif-system-solid-26-play-base',
             flip: 'Gif-system-solid-26-play-flip'
         }
@@ -93,8 +93,8 @@ export const servicesData = [
     { id: 1, text: 'Asesoría de negocio' },
     { id: 2, text: 'Diseño UI/UX' },
     { id: 3, text: 'Optimización del SEO', },
-    { id: 4, text: 'Framework'}
-      
+    { id: 4, text: 'Framework' }
+
 ];
 
 export const ourWorkData = [
