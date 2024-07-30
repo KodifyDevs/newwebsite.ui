@@ -12,12 +12,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <link rel="icon" href="favicon.ico" sizes="any" />
+        <link rel="icon" href="favicon.ico" sizes="any" />
         <ApolloWrapper>
           <LanguageProvider>
             <Navbar navItems={navItems} />
             <StyledJsxRegistry>{children}</StyledJsxRegistry>
-            <Footer footerItems={navItems}/>
+            <Footer footerItems={navItems} />
           </LanguageProvider>
         </ApolloWrapper>
       </body>
