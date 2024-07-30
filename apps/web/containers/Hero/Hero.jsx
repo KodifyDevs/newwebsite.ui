@@ -40,7 +40,7 @@ const Hero = () => {
                       Consulta
                     </Button>
                   </div>
-    
+
                   <div className="fixed z-10 block bottom-12 right-[22px] md:hidden">
                     <Button
                       backgroundColor="var(--green)"
@@ -53,7 +53,7 @@ const Hero = () => {
                     >
                     </Button>
                   </div>
-    
+
                 </div>
               </div>
 

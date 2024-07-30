@@ -43,7 +43,7 @@ export const PrevButton = (props) => {
       type="button"
       {...restProps}
     >
-     <BsArrowLeftSquareFill size={24}/>
+      <BsArrowLeftSquareFill size={24} />
       {children}
     </button>
   )

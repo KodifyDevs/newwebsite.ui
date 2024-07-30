@@ -42,7 +42,7 @@ const Card = ({
                               </div>
 
                            </div>
-                           
+
                         </div>
                      </section>
                   ))}

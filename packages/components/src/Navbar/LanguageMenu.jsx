@@ -37,7 +37,7 @@ export const LanguageMob = ({ isOpen, toggleMenu, languagesMob }) => {
         <span className={`${isOpen ? 'font-bold' : 'font-medium'} content-center px-3`}>
           {'Idioma'}
         </span>
-        {isOpen ? <BsFillCaretDownFill /> : <BsFillCaretDownFill className="text-rich-black-80"/>}
+        {isOpen ? <BsFillCaretDownFill /> : <BsFillCaretDownFill className="text-rich-black-80" />}
       </div>
 
       <div
