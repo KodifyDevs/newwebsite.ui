@@ -7,7 +7,7 @@ export const navItems = [
 ];
 
 
-export const CardData = [
+export const cardData = [
     {
         id: 1,
         title: "Desarrollo y diseño web",
@@ -116,4 +116,28 @@ export const ourWorkData = [
         description: "Lorem ipsum dolor sit amet consectetur. Massa dictum vulputate suspendisse congue. Pellentesque sit neque a morbi vitae urna tincidunt congue.",
 
     }
+]
+
+export const weAreWhatYouNeedData = [
+    {
+        id: 1,
+        num: '01',
+        title: "EQUIPO SINÉRGICO",
+        description: "Poseemos conocimiento en know how y conocimientos técnicos en las diferentes disciplinas tecnológicas.",
+
+    },
+    {
+        id: 2,
+        num: '02',
+        title: "EQUIPO SINÉRGICO",
+        description: "Poseemos conocimiento en know how y conocimientos técnicos en las diferentes disciplinas tecnológicas.",
+
+    },
+    {
+        id: 3,
+        num: '03',
+        title: "EQUIPO SINÉRGICO",
+        description: "Poseemos conocimiento en know how y conocimientos técnicos en las diferentes disciplinas tecnológicas.",
+
+    },
 ]
