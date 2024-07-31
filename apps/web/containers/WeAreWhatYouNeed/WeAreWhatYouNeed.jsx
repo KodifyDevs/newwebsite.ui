@@ -21,7 +21,7 @@ const WeAreWhatYouNeed = ({
                         <div className="flex py-6 lg:px-3 xl:gap-x-[77px]">
                             {weAreWhatYouNeedData.map((data) => (
                                 <section key={data.id} className="group [perspective:1000px] lg:ml-4 xl:ml-0">
-                                    <div className="card__front overflow-hidden relative mx-[36px] p-[46px_22px_46px_22px] w-[256px] shadow-[0px_4px_15px_0px_var(--primary-color-10)] transition-transform duration-500 group-hover:translate-y-0 lg:w-auto lg:mx-0 lg:p-[120px_87px_120px_27px]">
+                                    <div className="card__front overflow-hidden relative mx-[46px] p-[46px_22px_46px_22px] w-[256px] shadow-[0px_4px_15px_0px_var(--primary-color-10)] transition-transform duration-500 group-hover:translate-y-0 lg:w-auto lg:mx-0 lg:p-[120px_87px_120px_27px]">
 
                                         <div className="relative inset-1">
                                             <span className="text-caquelicot font-bold text-lg lg:text-5xl lg:leading-[57.6px]">{data.num}</span>
