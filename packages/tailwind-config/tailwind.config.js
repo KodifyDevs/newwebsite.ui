@@ -9,9 +9,12 @@ const config = {
         'rich-black-80': 'var(--primary-color-80)',
         'rich-black-70': 'var(--primary-color-70)',
         'caquelicot': 'var(--secondary-color)',
+        'caquelicot-10': 'var(--secondary-color-10)',
+        'caquelicot-15': 'var(--secondary-color-15)',
         'very-light-gray': 'var(--very-light-gray)',
         'dark-cyan': 'var(--green)',
         'winchester-gray': 'var(--winchester-gray)',
+        'philippine-gray': 'var(--philippine-gray)',
         'dark-cyan-10': 'var(--green-10)',
         'baby-powder': 'var(--baby-powder)',
         'baby-powder-70': 'var(--baby-powder-70)',
@@ -19,6 +22,7 @@ const config = {
         'baby-powde-80': 'var(--baby-powder-80)',
         'white-75': 'var(--white-75)',
         'white-90': 'var(--white-90)',
+        'black-05': 'var(--black-05)',
         'black-15': 'var(--black-15)',
         'black-20': 'var(--black-20)',
         'black-25': 'var(--black-25)',
@@ -59,8 +63,8 @@ const config = {
         ".no-scrollbar": {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
-        "&::-webkit-scrollbar": {
-        "display": "none"
+          "&::-webkit-scrollbar": {
+            "display": "none"
           },
         },
       }

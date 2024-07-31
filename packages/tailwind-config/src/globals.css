@@ -8,17 +8,20 @@
   --primary-color-70: #091928B2;
   --primary-color-80: #091928CC;
   --secondary-color: #F15025;
+  --secondary-color-10: #F150251A;
   --secondary-color-15: #F1502526;
+  --black-05: #0000000D;
   --black-15: #00000026;
   --black-20: #00000033;
   --black-25: #00000040;
   --baby-powder: #FFFFFC;
-  --baby-powder-70: #FFFFFCB2; 
-  --baby-powder-75: #FFFFFCBF; 
-  --baby-powder-80: #FFFFFCCC; 
+  --baby-powder-70: #FFFFFCB2;
+  --baby-powder-75: #FFFFFCBF;
+  --baby-powder-80: #FFFFFCCC;
   --cultured: #F5F5F5;
   --very-light-gray: #FAFAFA;
   --winchester-gray: #8B8C891A;
+  --philippine-gray: #8B8C89B2;
   --white-75: #FFFFFFBF;
   --white-90: #FFFFFFE5;
   --green: #128C7E;
@@ -143,4 +146,3 @@ body {
 .menu__languages .submenu__Languages .BsFillCaretDownFill {
   transition-delay: 600ms;
 }
-
