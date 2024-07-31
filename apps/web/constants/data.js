@@ -7,7 +7,7 @@ export const navItems = [
 ];
 
 
-export const CardData = [
+export const cardData = [
     {
         id: 1,
         title: "Desarrollo y diseño web",

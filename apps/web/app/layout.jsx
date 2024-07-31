@@ -3,7 +3,7 @@ import "@packages/tailwind-config/globals.css"
 import { Navbar, Footer } from "@packages/components"
 import StyledJsxRegistry from "./registry";
 import { LanguageProvider } from "@packages/contexts/LanguageContext";
-import { navItems } from "../constants/Data";
+import { navItems } from "../constants/data";
 
 export default function RootLayout({
   children,

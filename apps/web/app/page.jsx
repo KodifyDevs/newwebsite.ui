@@ -1,6 +1,6 @@
 import { Card } from "@packages/components";
 import { Hero, WhoWeAre, Services, OurWork } from "../containers";
-import { cardData, ourWorkData, servicesData } from "../constants/Data";
+import { cardData, ourWorkData, servicesData } from "../constants/data";
 
 export const metadata = {
   title: 'Kodify',
