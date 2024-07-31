@@ -23,23 +23,26 @@ const Button = ({
       padding: '13px 13px',
     },
     medium: {
-      padding: '15px 55px', 
+      padding: '15px 55px',
     },
     large: {
-      padding: '13px 77px', 
+      padding: '13px 77px',
     },
     whatsappBtn: {
-      padding: '15px 53px 15px 63px', 
+      padding: '15px 53px 15px 63px',
     },
-    whatsappBtnLarge:{
+    whatsappBtnLarge: {
       padding: '15px 90px'
-    }
+    },
+    mediaButton: {
+      padding: '7px'
+    },
   };
   return (
     <a className={`custom-button font-bold flex gap-x-2 cursor-pointer leading-5 group justify-center items-center mx-auto`}>
       {children}
       {IconComponent && <IconComponent size={iconSize} />}
-      
+
       {/* Custom button styles */}
       <style jsx>{`
         .custom-button {
