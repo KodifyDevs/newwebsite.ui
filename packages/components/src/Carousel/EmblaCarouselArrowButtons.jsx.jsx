@@ -57,7 +57,7 @@ export const NextButton = (props) => {
       type="button"
       {...restProps}
     >
-      <BsArrowRightSquareFill size={24} />
+      <BsArrowRightSquareFill size={24}  />
       {children}
     </button>
   )
