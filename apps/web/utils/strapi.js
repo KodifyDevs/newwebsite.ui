@@ -1,4 +1,4 @@
-import { STRAPI_URL } from "../config";
+import { STRAPI_URL } from "../config/config";
 
 export async function getHome() {
     const res = await fetch(`${STRAPI_URL}/api/home?populate=*`)
