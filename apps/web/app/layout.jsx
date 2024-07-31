@@ -15,6 +15,7 @@ export default function RootLayout({
           <LanguageProvider>
             <Navbar navItems={navItems} />
             <StyledJsxRegistry>{children}</StyledJsxRegistry>
+            <Footer footerItems={navItems} />
           </LanguageProvider>
       </body>
     </html>
