@@ -1,6 +1,6 @@
 import { Card } from "@packages/components";
 import { Hero, WhoWeAre, Services, OurWork } from "../containers";
-import { cardData, ourWorkData, servicesData, weAreWhatYouNeedData } from "../constants/Data";
+import { cardData, ourWorkData, servicesData, weAreWhatYouNeedData } from "../constants/data";
 import WeAreWhatYouNeed from "../containers/WeAreWhatYouNeed";
 
 export const metadata = {

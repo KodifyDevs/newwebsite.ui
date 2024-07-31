@@ -1,10 +1,9 @@
 import "./globals.css";
 import "@packages/tailwind-config/globals.css"
-import { ApolloWrapper } from "../graphql/ApolloWrapper";
-import { Navbar } from "@packages/components"
+import { Navbar, Footer } from "@packages/components"
 import StyledJsxRegistry from "./registry";
 import { LanguageProvider } from "@packages/contexts/LanguageContext";
-import { navItems } from "../constants/Data";
+import { navItems } from "../constants/data";
 
 export default function RootLayout({
   children,
@@ -13,12 +12,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <link rel="icon" href="favicon.ico" sizes="any" />
-        <ApolloWrapper>
-          <LanguageProvider>
-            <Navbar navItems={navItems} />
-            <StyledJsxRegistry>{children}</StyledJsxRegistry>
-          </LanguageProvider>
-        </ApolloWrapper>
+        <LanguageProvider>
+          <Navbar navItems={navItems} />
+          <StyledJsxRegistry>{children}</StyledJsxRegistry>
+          <Footer footerItems={navItems} />
+        </LanguageProvider>
       </body>
     </html>
   );
