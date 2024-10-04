@@ -11,7 +11,7 @@ export default function ({
   weAreWhatYouNeedData,
 }) {
   return (
-    <div className="w-full bg-very-light-gray py-12 lg:bg-baby-powder">
+    <div className="w-full bg-very-light-gray py-12 lg:bg-black-5">
       <Container>
         <h2 className="text-center font-bold text-2xl leading-leading-7 text-rich-black">
           Somos <br />{" "}
@@ -67,15 +67,13 @@ export default function ({
 
         <div className="flex mt-6">
           <Button
+            size="mediaButtonMedium"
+            iconSize="large"
+            type="secondary"
             dynamicIcon="BsArrowDownShort"
-            size="small"
-            backgroundColor="var(--baby-powder)"
-            fontColor="var(--primary-color)"
-            iconSize="24px"
-            borderRadius="100%"
-            dropShadow="0px 4px 15px 0px var(--black-05)"
-            dropShadowHover="0px 4px 15px 0px var(--secondary-color-10)"
-          />
+            rounded="true"
+            className="hover:text-baby-powder"
+          ></Button>
         </div>
       </Container>
 

@@ -123,34 +123,30 @@ export default function () {
                 </div>
                 <div className="flex mt-12 justify-center md:gap-x-5 lg:justify-normal">
                   <div className="mb-12 lg:mb-0">
-                    <Button size="medium">Descúbrenos</Button>
+                  <Button
+                        // href="/services"
+                      >
+                        Descúbrenos
+                      </Button>
                   </div>
                   <div className="hidden md:block">
-                    <Button
-                      backgroundColor="var(--green)"
-                      backgroundColorHover="var(--baby-powder)"
-                      borderColor="var(--green)"
-                      borderColorHover="var(--green)"
-                      dropShadow="0px 4px 15px 0px var(--green-10)"
-                      dropShadowHover="0px 4px 15px 0px var(--green-10)"
-                      dynamicIcon="BsWhatsapp"
-                      fontColorHover="var(--green)"
-                      size="whatsappBtn"
-                    >
-                      Contactar
-                    </Button>
+                      <Button
+                        iconSize="small"
+                        type="whatsapp"
+                        dynamicIcon="BsWhatsapp"
+                      >
+                        Contactar
+                      </Button>
                   </div>
 
                   <div className="fixed z-10 block bottom-12 right-[22px] md:hidden">
                     <Button
-                      backgroundColor="var(--green)"
-                      backgroundColorHover="var(--baby-powder)"
-                      borderRadius="100%"
-                      dynamicIcon="BsWhatsapp"
-                      iconSize="24"
-                      fontColorHover="var(--green)"
-                      size="small"
-                    ></Button>
+                        size="mediaButtonMedium"
+                        iconSize="large"
+                        type="whatsapp"
+                        dynamicIcon="BsWhatsapp"
+                        rounded="true"
+                      ></Button>
                   </div>
                 </div>
               </div>

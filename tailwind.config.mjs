@@ -20,6 +20,7 @@ export default {
 		  'baby-powde-80': 'var(--baby-powder-80)',
 		  'white-75': 'var(--white-75)',
 		  'white-90': 'var(--white-90)',
+		  'black-5': 'var(--black-5)',
 		  'black-15': 'var(--black-15)',
 		  'black-20': 'var(--black-20)',
 		  'black-25': 'var(--black-25)',

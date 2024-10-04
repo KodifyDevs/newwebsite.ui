@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container } from "@components/index";
 
-export default function() {
+export default function () {
   return (
     <section>
       <div className=" w-full bg-rich-black relative">
@@ -55,14 +55,7 @@ export default function() {
                 En Kodify, creemos en el potencial de las ideas
               </p>
               <div className=" flex mb-12">
-                <Button
-                  backgroundColor="var(--baby-powder)"
-                  backgroundColorHover="var(--secondary-color)"
-                  fontColor="var(--Rich-Black)"
-                  fontColorHover="var(--Rich-Black)"
-                >
-                  Saber mas
-                </Button>
+                <Button type="secondary">Saber mas</Button>
               </div>
             </div>
             <div className=" absolute bottom-[47px] right-[44px] hidden xl:block">
