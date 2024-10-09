@@ -71,7 +71,6 @@ export default function ({
             iconSize="large"
             type="secondary"
             dynamicIcon="BsArrowDownShort"
-            rounded="true"
             className="hover:text-baby-powder"
           ></Button>
         </div>

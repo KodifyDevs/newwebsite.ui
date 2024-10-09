@@ -1,10 +1,9 @@
 import * as bsIcon from "react-icons/bs";
 import { cva } from "class-variance-authority";
-import { cn } from "../../utils/common-file"; // Función que combina clsx y tailwind-merge
+import { cn } from "../../utils/common-file";
 
-// Definir las variantes directamente en este archivo
 const buttonVariants = cva(
-  "font-bold flex gap-x-2 cursor-pointer leading-5 group justify-center items-center mx-auto", // Clases base de Tailwind
+  "font-bold flex gap-x-2 cursor-pointer leading-5 group justify-center items-center mx-auto rounded-lg",
   {
     variants: {
       size: {
@@ -22,15 +21,16 @@ const buttonVariants = cva(
         whatsapp:
           "bg-dark-cyan text-baby-powder border border-transparent border-dark-cyan hover:border-dark-cyan hover:bg-baby-powder hover:text-dark-cyan shadow-[0px_4px_15px_0px_dark-cyan] hover:shadow-[0px_4px_15px_0px_dark-cyan]",
       },
-      rounded: {
-        true: "rounded-full",
-        false: "rounded-lg",
-      },
     },
+    compoundVariants: [
+      {
+        size: ["mediaButtonSmall", "mediaButtonMedium"],
+        className: "rounded-full",
+      },
+    ],
     defaultVariants: {
       size: "medium",
       type: "primary",
-      rounded: false,
     },
   }
 );
@@ -46,7 +46,6 @@ export default function Button({
   size = "medium",
   iconSize = "medium",
   type = "primary",
-  rounded = false,
   className,
   href,
   children,
@@ -56,7 +55,7 @@ export default function Button({
   return (
     <a
       href={href}
-      className={cn(buttonVariants({ size, type, rounded }), className)}
+      className={cn(buttonVariants({ size, type }), className)}
     >
       {children}
       {IconComponent && <IconComponent size={iconSizeMap[iconSize]} />}

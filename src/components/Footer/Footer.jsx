@@ -53,7 +53,6 @@ export default function ({ footerItems }) {
                   iconSize="medium"
                   type="secondary"
                   dynamicIcon="BsFacebook"
-                  rounded="true"
                   className="hover:text-baby-powder"
                 ></Button>
                 <Button
@@ -61,7 +60,6 @@ export default function ({ footerItems }) {
                   iconSize="medium"
                   type="secondary"
                   dynamicIcon="BsLinkedin"
-                  rounded="true"
                   className="hover:text-baby-powder"
                 ></Button>
                 <Button
@@ -69,7 +67,6 @@ export default function ({ footerItems }) {
                   iconSize="medium"
                   type="secondary"
                   dynamicIcon="BsInstagram"
-                  rounded="true"
                   className="hover:text-baby-powder"
                 ></Button>
               </div>

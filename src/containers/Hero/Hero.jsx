@@ -145,7 +145,6 @@ export default function () {
                         iconSize="large"
                         type="whatsapp"
                         dynamicIcon="BsWhatsapp"
-                        rounded="true"
                       ></Button>
                   </div>
                 </div>
