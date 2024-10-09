@@ -43,20 +43,13 @@ export default function ({ packagesData }) {
               </ul>
 
               <div className="lg:hidden">
-                <Button
-                  backgroundColor="var(--baby-powder)"
-                  fontColor="var(--primary-color)"
-                >
+                <Button type="secondary" size="small">
                   Adquirir
                 </Button>
               </div>
 
               <div className="hidden w-fit mx-auto lg:block">
-                <Button
-                  backgroundColor="var(--baby-powder)"
-                  fontColor="var(--primary-color)"
-                  size="large"
-                >
+                <Button type="secondary" size="large">
                   Adquirir
                 </Button>
               </div>
