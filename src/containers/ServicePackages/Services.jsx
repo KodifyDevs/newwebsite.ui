@@ -2,7 +2,7 @@ import { Button, Container } from "@components/index";
 
 export default function ({ packagesData }) {
   return (
-    <div className="w-full bg-very-light-gray pt-12">
+    <div className="w-full bg-baby-powder pt-12">
       <Container>
         <h2 className="text-center font-bold text-3xl leading-leading-title text-black">
           Empezá ya
@@ -159,7 +159,7 @@ export default function ({ packagesData }) {
           </div>
         </div>
         <div className="flex justify-center mt-12">
-          <hr className="w-[168px] h-[1px] bg-black-20 border lg:w-[426px] lg:bg-black-25" />
+          <hr className="w-[168px] h-[1px] bg-black-20 border lg:w-[426px] lg:bg-black-25 mb-12 lg:mb-0" />
         </div>
       </Container>
     </div>

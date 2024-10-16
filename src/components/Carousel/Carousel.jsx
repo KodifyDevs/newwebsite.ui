@@ -1,68 +1,139 @@
-'use client';
-import React, { useEffect } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import useDotButton from './EmblaCarouselDotButton';
-import { NextButton, PrevButton, usePrevNextButtons } from './EmblaCarouselArrowButtons.jsx';
+"use client";
+import React, { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import useDotButton from "./EmblaCarouselDotButton";
+import {
+  NextButton,
+  PrevButton,
+  usePrevNextButtons,
+} from "./EmblaCarouselArrowButtons.jsx";
 
-export default function({
-    children,
-    data,
-    showDotsIndicators = false,
-    showArrowsIndicators = false,
-    breakpoint,
+export default function ({
+  children,
+  data,
+  showDotsIndicators = false,
+  showArrowsIndicators = false,
+  showAboveBreakpoint = false,
+  showBelowBreakpoint = true,
+  breakpoint,
+  loopVerification = false,
+  gradientEffect = false,
 }) {
+  const breakpoints = {
+    md: "768px",
+    lg: "1024px",
+    non: "2561px",
+  };
 
-    const breakpoints = {
-        md: '768px',
-        lg: '1024px',
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= parseInt(breakpoints.lg));
     };
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-        loop: false,
-        breakpoints: {
-            [`(min-width: ${breakpoints[breakpoint]})`]: { active: false },
-        },
-    });
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    const {
-        prevBtnDisabled,
-        nextBtnDisabled,
-        onPrevButtonClick,
-        onNextButtonClick
-    } = usePrevNextButtons(emblaApi);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: isLargeScreen && loopVerification,
+    breakpoints: {
+      [`(min-width: ${breakpoints[breakpoint]})`]: {
+        active: isLargeScreen && loopVerification,
+      },
+    },
+  });
 
-    return (
-        <>
-            <div className="relative overflow-hidden">
-                <section ref={emblaRef}>
-                    {children}
-                </section>
-                {showArrowsIndicators && (
-                    <>
-                        <div className={`absolute top-1/2 left-0 tra5nsform -translate-y-1/2 ${breakpoint ? `${breakpoint}:hidden` : ''}`}>
-                            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-                        </div>
+  const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi);
 
-                        <div className={`absolute top-1/2 right-0 transform -translate-y-1/2 ${breakpoint ? `${breakpoint}:hidden` : ''}`}>
-                            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-                        </div>
-                    </>
-                )}
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
 
-                {showDotsIndicators && (
-                    <div className={`flex justify-center space-x-[6px] mt-6 ${breakpoint ? `${breakpoint}:hidden` : ''}`}>
-                        {Array.from({ length: data.length }).map((_, index) => (
-                            <div
-                                key={index}
-                                onClick={() => onDotButtonClick(index)}
-                                className={`h-1 w-[26px] rounded-[10px] ${index === selectedIndex ? 'bg-rich-black' : 'bg-black-20'}`}
-                            ></div>
-                        ))}
-                    </div>
-                )}
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="relative overflow-hidden">
+        
+        {gradientEffect && (
+          <>
+            <section
+          ref={emblaRef}
+          className="lg:[mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,1)_10%_90%,transparent)] xl:[mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,1)_25%_75%,transparent)]"
+        >
+          {children}
+        </section>
+          </>
+        )}
+        {!gradientEffect && (
+          <>
+            <section
+          ref={emblaRef}
+          className=""
+        >
+          {children}
+        </section>
+          </>
+        )}
+        {showArrowsIndicators && (
+          <>
+            {isLargeScreen && showAboveBreakpoint && (
+              <>
+                <div className="absolute top-1/2 transform -translate-y-1/2 left-0 xl:left-[12%] 2xl:left-[16%] ">
+                  <PrevButton
+                    onClick={onPrevButtonClick}
+                    disabled={prevBtnDisabled}
+                  />
+                </div>
+
+                <div className="absolute top-1/2 transform -translate-y-1/2 right-0 xl:right-[11.5%] 2xl:right-[16%]">
+                  <NextButton
+                    onClick={onNextButtonClick}
+                    disabled={nextBtnDisabled}
+                  />
+                </div>
+              </>
+            )}
+
+            {!isLargeScreen && showBelowBreakpoint && (
+              <>
+                <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+                  <PrevButton
+                    onClick={onPrevButtonClick}
+                    disabled={prevBtnDisabled}
+                  />
+                </div>
+
+                <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+                  <NextButton
+                    onClick={onNextButtonClick}
+                    disabled={nextBtnDisabled}
+                  />
+                </div>
+              </>
+            )}
+          </>
+        )}
+
+        {showDotsIndicators && (
+          <div
+            className={`flex justify-center space-x-[6px] ${breakpoint ? `${breakpoint}:hidden` : ""}`}
+          >
+            {Array.from({ length: data.length }).map((_, index) => (
+              <div
+                key={index}
+                onClick={() => onDotButtonClick(index)}
+                className={`h-1 w-[26px] rounded-[10px] ${index === selectedIndex ? "bg-rich-black lg:bg-transparent" : "bg-black-20 lg:bg-transparent"}`}
+              ></div>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
