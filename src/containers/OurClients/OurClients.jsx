@@ -23,7 +23,7 @@ const OurClients = ({ ourWorkData }) => {
               showArrowsIndicators={true}
               showAboveBreakpoint={true}
               showBelowBreakpoint={false}
-              breakpoint="non"
+              breakpoint="xl"
               loopVerification={true}
               gradientEffect={true}
             >

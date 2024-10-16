@@ -22,7 +22,7 @@ export default function ({
   const breakpoints = {
     md: "768px",
     lg: "1024px",
-    non: "2561px",
+    xl: "2560px",
   };
 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
