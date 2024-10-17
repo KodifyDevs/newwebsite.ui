@@ -4,10 +4,10 @@ import { Button, Carousel, Container } from "@components/index";
 
 const ourWork = ({ ourWorkData }) => {
   return (
-    <div className="w-full bg-very-light-gray">
+    <div className="w-full bg-baby-powder">
       <Container>
-        <h2 className="text-center font-bold text-3xl leading-leading-title text-black">
-          Empezá ya
+        <h2 className="text-center font-bold text-3xl leading-leading-title text-black mt-12 lg:mt-5">
+          Nuestro trabajo
         </h2>
         <div className="overflow-hidden mx-auto w-[360px] lg:w-full">
           <Carousel

@@ -5,6 +5,7 @@ import {
   Services as ServicesContainer,
   OurWork,
   WeAreWhatYouNeed,
+  OurClients,
 } from "@containers/index";
 import Card from "@components/Card";
 
@@ -13,6 +14,7 @@ import "../styles/globals.css";
 
 import {
   cardData,
+  OurClientsData,
   ourWorkData,
   servicesData,
   weAreWhatYouNeedData,
@@ -26,6 +28,7 @@ const title = "Kodify";
   <WhoWeAre client:only="react" />
   <Card cardData={cardData} client:only="react" />
   <ServicesContainer packagesData={servicesData} client:only="react" />
+  <OurClients ourWorkData={OurClientsData} client:only="react" />
   <OurWork ourWorkData={ourWorkData} client:only="react" />
   <WeAreWhatYouNeed
     weAreWhatYouNeedData={weAreWhatYouNeedData}
